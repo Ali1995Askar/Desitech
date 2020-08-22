@@ -21,40 +21,18 @@ class AllJobsList(APIView):
             jobs = Job.job_manger.all()
             allJobs = JobSerializer(jobs, many=True)
             status_code = status.HTTP_200_OK
-            response = {
-                        'success' : 'True',
-                        'all jobs' : allJobs.data ,
-                        'status code' : status_code }
+            response = {'all jobs' : allJobs.data , }
             return Response(response , status_code)
 
         except Exception as err :
             status_code = status.HTTP_404_NOT_FOUND
-            response = {
-                        'success' : 'False',
-                        'error' : str (err) ,
-                        'status code' : status_code}
-
+            response = {'error' : str (err) , }
             return Response (response , status_code)
           
           
 
 
 
-
-#  status_code = status.HTTP_200_OK
-#             response = {
-#                 'success' : 'True',
-#                 'job' : jobDeatils.data ,
-#                 'status code' : status_code}
-#             return Response(response , status_code)
-
-#         except Exception as err:
-#             status_code = status.HTTP_404_NOT_FOUND
-#             response = {
-#                 'success' : 'False',
-#                 'error' : str (err) ,
-#                 'status code' : status_code}
-#             return Response (response , status_code)
 
 
 
