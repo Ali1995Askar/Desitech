@@ -1,0 +1,69 @@
+{% extends 'shared/_base.html' %}
+{% load static %}
+{% block title %} update job {% endblock %}
+
+{% block content%}
+
+<section class= 'createjobs my-5 mx-auto'>
+        <div class="container">
+            <div class="row rounded shadow-lg">
+                <div class= "box1">
+                    <h2 class= 'text-white text-capitalize text-right'>Update job</h2>
+                </div>
+                <div class="col-sm-12 px-5">
+                    <form method="post" id="Countries" data-cities-url="{% url 'jobs:ajax_load_cities' %}" novalidate>
+                    {% csrf_token %}
+                   
+                      <div class="form-group">
+                        <label for="id_title">{{form.title.label}}</label>
+                         {{form.title}}
+                      </div>
+                     
+                      <div class="form-row">
+                       
+                         <div class="form-group col-md-6">
+                              
+                                <label for="city">{{form.country.label}}</label>
+                                {{form.country}}
+                           
+                            </div>
+                       
+                            <div class="form-group col-md-6">
+                              
+                                <label for="city">{{form.city.label}}</label>
+                                {{form.city}}
+                           
+                            </div>
+                           
+                      </div>
+                      <div class="form-group">
+                                <label for="id_skills">{{form.abstract.label}}</label>
+                                {{form.abstract}}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_skills">{{form.skills.label}}</label>
+                             {{form.skills}}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_skills">{{form.description.label}}</label>
+                             {{form.description}}
+                        </div>
+                  
+                          <div class="form-group">
+                           <button type="submit"  class='btn  my-3 text-uppercase'  id="myBtn">Create</button>
+                          
+                          </div>
+                         
+                    </form>
+                    
+                </div>
+                <div class= "box">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,224L34.3,229.3C68.6,235,137,245,206,208C274.3,171,343,85,411,74.7C480,64,549,128,617,149.3C685.7,171,754,149,823,128C891.4,107,960,85,1029,112C1097.1,139,1166,213,1234,245.3C1302.9,277,1371,267,1406,261.3L1440,256L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path></svg>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+      
+{% endblock %}

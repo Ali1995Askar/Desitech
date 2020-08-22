@@ -1,0 +1,24 @@
+
+<div class="card text-center mb-4 animate__animated animate__fadeIn">
+    <div class="card-header bg-primary text-warning">
+      <h3>{{ job.title }}</h3>
+    </div>
+    <div class="card-body text-dark">
+
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><p>{{ job.text }}</p></li>
+            <li class="list-group-item"><p>{{ job.skills }}</p></li>
+            <li class="list-group-item"><p><strong>Email: </strong>{{job.publish_By}}</p></li>
+            <li class="list-group-item"><p><strong>Phone Number : </strong> {{job.publish_By.company_profile.phone_number}}</p></li>
+            <li class="list-group-item"><p><strong>Mobile Number : </strong> {{job.publish_By.company_profile.mobile_number}}</p></li>
+        </ul>
+    </div>
+    <div class="card-footer text-muted">
+        <p><strong>job adress :  </strong>{{ job.country }} - {{ job.city }}</p>
+        <p><strong> company adress : </strong>{{ job.publish_By.company_profile.country }} - {{ job.publish_By.company_profile.city }} - {{ job.publish_By.company_profile.street }} - {{ job.publish_By.company_profile.building_number }}</p>
+   </div>
+        <a href="#" class="btn btn-primary text-warning"><strong>Apply Now</strong></a>
+       
+    </div>
+    </div>
+</div>

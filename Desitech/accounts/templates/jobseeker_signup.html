@@ -1,0 +1,140 @@
+{% extends 'shared/_base.html' %}
+{% block title %} {{page_title}} {% endblock %}
+{% load static %}
+
+
+{% block content%}
+<section class= 'theBody my-5 mx-auto'>
+            <div class="container">
+                <div class="row rounded shadow-lg">
+                  
+                    <div class="accountBox  align-items-center justify-content-center text-white text-center">
+                      <h2 class= 'my-3 py-3 text-capitalize'>job seeker profile Information</h2>
+                      <div class="photo">
+                        <img src="{% static 'img/Mask@3x.png' %}" alt="" class= 'img-fluid' style = 'width:200px ; height:200px'>
+                      </div>
+                      <div class="accountdata py-3">
+                        <h3 class="text-capitalize text-white">{{user.email}}</h3>
+                       
+                      </div>
+                    </div>
+                   
+                    <div class="col-md-12 px-5 mt-4">
+                        <form  method="post"  enctype="multipart/form-data" id="Countries" data-cities-url="{% url 'jobs:ajax_load_cities' %}"  novalidate>
+                          {% csrf_token %}
+                          
+                          <div class="form-group">
+                            <label for="id_Name">{{JobSeeker_profile_form.Name.label}}</label>
+                            {{JobSeeker_profile_form.Name}}
+                            <small class = 'text-muted'>  {{JobSeeker_profile_form.Name.errors}} </small>
+                          </div>
+                         
+                          <div class="form-group">
+                            <label for="id_surname">{{JobSeeker_profile_form.surname.label}}</label>
+                            {{JobSeeker_profile_form.surname}}
+                            <small class = 'text-muted'>  {{JobSeeker_profile_form.surname.errors}} </small>
+                          </div>
+                        
+                              <div class="form-group">
+                                <legend class="col-form-label py-3"> {{JobSeeker_profile_form.gender.label}} </legend>
+                                 {{JobSeeker_profile_form.gender}}
+                                  <small class = 'text-muted'>  {{JobSeeker_profile_form.gender.errors}} </small>
+                              </div>
+                            
+                            
+                              <div class="form-group">
+                                <label for="id_country_of_residence"> {{JobSeeker_profile_form.country_of_residence.label}}</label>
+                                {{JobSeeker_profile_form.country_of_residence}}
+                                 <small class = 'text-muted'>  {{JobSeeker_profile_form.country_of_residence.errors}} </small>
+                              </div>
+                             
+                              <div class="form-group">
+                                <label for="dateofbirth"> {{JobSeeker_profile_form.birth_date.label}}</label>
+                                 {{JobSeeker_profile_form.birth_date}}
+                                  <small class = 'text-muted'>  {{JobSeeker_profile_form.birth_date.errors}} </small>
+                              </div>
+
+                               <div class="form-group">
+                                <label for="id_mobile_number">{{JobSeeker_profile_form.house_number.label}}</label>
+                                {{JobSeeker_profile_form.house_number}}
+                                <small class = 'text-muted'>  {{JobSeeker_profile_form.house_number.errors}} </small>
+                              </div>
+
+                               <div class="form-group">
+                                 <label for="id_phone_number">{{JobSeeker_profile_form.phone_number.label}}</label>
+                                 {{JobSeeker_profile_form.phone_number}}
+                                  <small class = 'text-muted'>  {{JobSeeker_profile_form.phone_number.errors}} </small>
+                               </div>
+
+                            
+                           
+                          <div class="form-group">
+                              <label for="id_mobile_number">{{JobSeeker_profile_form.mobile_number.label}}</label>
+                              {{JobSeeker_profile_form.mobile_number}}
+                              <small class = 'text-muted'>  {{JobSeeker_profile_form.mobile_number.errors}} </small>
+                          </div>
+
+                     
+                         <div class="form-group">
+                              <label for="id_CV">{{JobSeeker_profile_form.CV.label}}</label>
+                              
+                              {{JobSeeker_profile_form.CV}}
+                              <small class = 'text-muted'>  {{JobSeeker_profile_form.CV.errors}} </small>
+                          </div>
+                       
+                          <div class="form-group">
+                              <label for="id_personal_photo">{{JobSeeker_profile_form.personal_photo.label}}</label>
+                              {{JobSeeker_profile_form.personal_photo}}
+                              <small class = 'text-muted'>  {{JobSeeker_profile_form.personal_photo.errors}} </small>
+                          </div>
+                      
+                         <div class="form-group">
+                              
+                            <label for="id_country"> {{JobSeeker_profile_form.country.label}}</label>
+                            {{JobSeeker_profile_form.country}}
+                            <small class = 'text-muted'>  {{JobSeeker_profile_form.country.errors}} </small>
+                           
+                          </div>
+                         
+                          <div class="form-group">
+                            <label for="id_city"> {{JobSeeker_profile_form.city.label}}</label>
+                            {{JobSeeker_profile_form.city}}
+                             <small class = 'text-muted'>  {{JobSeeker_profile_form.city.errors}} </small>
+                          </div>
+                         
+                          <div class="form-group">
+                            <label for="id_zip_code">{{JobSeeker_profile_form.zip_code.label}}</label>
+                            {{JobSeeker_profile_form.zip_code}}
+                             <small class = 'text-muted'>  {{JobSeeker_profile_form.zip_code.errors}} </small>
+                          </div>
+                         
+                          <div class="form-group">
+                            <label for="id_street"> {{JobSeeker_profile_form.street.label}}</label>
+                            {{JobSeeker_profile_form.street}}
+                              <small class = 'text-muted'>  {{JobSeeker_profile_form.street.errors}} </small>
+                          </div>
+                         
+                           <div class="form-group">
+                            <label for="id_building_number"> {{JobSeeker_profile_form.building_number.label}}</label>
+                            {{JobSeeker_profile_form.building_number}}
+                            <small class = 'text-muted'>  {{JobSeeker_profile_form.building_number.errors}} </small>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="id_cover_letter"> {{JobSeeker_profile_form.cover_letter.label}}</label>
+                            {{JobSeeker_profile_form.cover_letter}}
+                            <small class = 'text-muted'>  {{JobSeeker_profile_form.cover_letter.errors}} </small>
+                          </div>
+                         
+                                <div class="form-group">
+                                  <button type="submit" class='btn  my-3' id='myBtn'>continue</button>
+                                </div>
+                        </form>
+                     
+                    </div>
+                </div>
+            </div>
+       </section>
+{% endblock %}
+
+

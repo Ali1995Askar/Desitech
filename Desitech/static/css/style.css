@@ -1,0 +1,399 @@
+/*footer*/
+
+body {
+    color: red;
+}
+
+footer {
+    color: white !important;
+}
+
+li {
+    margin-top: 20px;
+    margin-bottom: 20px
+}
+
+.row-1 {
+    background-color: #1E242A !important
+}
+
+.row-2 {
+    background-color: #28323C !important
+}
+
+.edit-jobs:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+    text-decoration: none;
+    text-shadow: 1px 2px 1px rgb(220, 235, 85)
+}
+
+
+/* 3b5998 */
+
+.fa-plus-circle:hover {
+    transform: scale(1.2);
+    transition: all 0.5s ease-in-out;
+    text-decoration: none;
+    text-shadow: 3px 4px 3px rgb(220, 235, 85)
+}
+
+#add-job-icon {
+    color: #294781;
+}
+
+
+/*********************************************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* بداية الكارت*/
+
+.theBody {
+    width: 70%;
+}
+
+
+/*بداية الجزء العلوي لجميع الصفحات*/
+
+.title {
+    width: 100%;
+    height: 300px;
+    background: #4267b2;
+    position: relative;
+}
+
+.title h2,
+.title .companytitle {
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    position: absolute;
+    top: 30%;
+    left: 48%;
+    transform: translate(-30%, -48%);
+    z-index: 2;
+}
+
+.accountBox {
+    width: 100%;
+    height: 350px;
+    background: url(/static/img/Rectangle@3x.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+
+.accountBox h1 {
+    font-weight: 600;
+}
+
+.accountdata h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.accountdata p {
+    font-size: 1rem;
+}
+
+.title .companytitle {
+    top: 30%;
+    left: 37%;
+    transform: translate(-30%, -37%);
+}
+
+.title::after {
+    content: '';
+    clip-path: ellipse(50% 34% at 50% 98%);
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.text {
+    color: #4267b2 !important;
+}
+
+
+/*نهاية الجزء العلوي لجميع الصفحات*/
+
+
+/*بداية النموذج*/
+
+input[type=email],
+input[type=password],
+input[type=text] {
+    padding-left: 2%;
+}
+
+.form-control,
+input[type=email],
+input[type=password],
+input[type=text] {
+    outline: none;
+    width: 100%;
+    border: 1px solid #4267b2;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-transform: capitalize;
+    border-radius: 10px;
+}
+
+.form-control::placeholder,
+input[type=email],
+input[type=password],
+input[type=text] {
+    color: rgb(134, 132, 132);
+}
+
+input[type=password] {
+    border-right: 0;
+}
+
+.input-group-text {
+    background: transparent;
+    border: 1px solid #4267b2;
+    border-radius: 0 10px 10px 0;
+    border-left: 0;
+    outline: none;
+    color: rgb(134, 132, 132);
+}
+
+.col-form-label {
+    text-transform: capitalize;
+    font-size: 1, 2rem;
+    font-weight: 600;
+}
+
+.select {
+    background-image: url(/static/img/Component.png) !important;
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.iti {
+    width: 100%;
+    display: block
+}
+
+
+/*نهاية النموذج*/
+
+
+/*بداية الزر*/
+
+#myBtn {
+    width: 100%;
+    background: #4267b2;
+    color: #fff !important;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+    line-height: 2;
+}
+
+#myBtn:hover {
+    background: #fff !important;
+    color: #4267b2 !important;
+    border: 2px solid #4267b2 !important;
+}
+
+
+/*نهاية جزء التواصل الاجتماعي*/
+
+
+/*بداية رابط الصفحات الأخرى*/
+
+.links {
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+
+/*نهاية رابط الصفحات الأخرى*/
+
+.header {
+    background: #4267b2;
+    border-bottom: 2px solid#ccc;
+}
+
+
+/*  جزء الناف*/
+
+.header .navbar {
+    padding: 0;
+}
+
+.navbar-brand img {
+    width: 100px;
+    height: 100px;
+    padding: 0;
+}
+
+.navbar-brand h1 {
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: bolder;
+}
+
+.navbar-brand h1 span {
+    color: rgb(220, 235, 85);
+}
+
+.header .navbar .navbar-toggler .icon-bar {
+    color: #fff !important;
+}
+
+.header .navbar #navbarcollapse .nav-item .nav-link {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 15px 10px 15px;
+    line-height: 1.2;
+}
+
+.header .navbar #navbarcollapse .active .nav-link {
+    color: rgb(220, 235, 85) !important;
+}
+
+.dropdown-toggle::after {
+    content: none;
+}
+
+.dropdown .dropdown-menu {
+    border: 2px solid rgb(220, 235, 85);
+    border-radius: 10px;
+    overflow: hidden;
+    translate: all 0.5s ease-in;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+.dropdown .dropdown-menu .dropdown-item {
+    color: #4267b2;
+}
+
+.dropdown .dropdown-menu .dropdown-item:hover {
+    background: #4267b2;
+    color: #fff;
+}
+
+#delete-icon {
+    color: #4267b2;
+}
+
+#filter-select-jobs {
+    background-color: #4267b2;
+    color: rgb(220, 235, 85);
+    border: 0 none;
+    border-radius: 20px;
+    padding: 6px 20px;
+}
+
+#filter-btn-jobs {
+    color: #4267b2;
+}
+
+#filter-select-jobs:hover {
+    background-color: rgb(220, 235, 85);
+    color: #4267b2;
+}
+
+.table_head {
+    background-color: rgb(220, 235, 85);
+    color: #4267b2;
+}
+
+
+/* create job form*/
+
+.createjobs {
+    width: 75%;
+}
+
+.box,
+.box1 {
+    width: 100%;
+    background: linear-gradient(66deg, #4267b2, #000);
+}
+
+.box1 {
+    clip-path: polygon(100% 1%, 100% 100%, 74% 100%, 54% 71%, 0% 71%, 0% 0%);
+}
+
+.box1 h2 {
+    padding: 3% 2% 6% 0%;
+    font-weight: 700;
+    font-size: 1.9rem;
+    font-style: italic;
+}
+
+label,
+.col-form-label {
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.form-check-label {
+    font-size: 1rem;
+}
+
+textarea.form-control {
+    width: 100%;
+    height: 400px;
+    max-height: 400px;
+}
+
+
+/* footer*/
+
+.footer-top {
+    background: linear-gradient(66deg, #4267b2, rgba(0, 0, 0, 0.555), #4267b2);
+    padding: 30px 0 5px;
+    color: #fff;
+}
+
+.footer-top h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.two ul li {
+    padding: 5px 0;
+    line-height: 2;
+}
+
+.two ul li a {
+    color: #fff !important;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.footer-text {
+    text-align: center;
+    color: #fff;
+    line-height: 1;
+}

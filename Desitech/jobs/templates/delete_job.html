@@ -1,0 +1,34 @@
+
+{% extends 'shared/_base.html' %}
+{% load static %}
+{% block title %} delete job {% endblock %}
+
+{% block content%}
+ <div class="container">
+    <div  class="jumbotron ">
+       <div class="row justify-content-md-center">
+            <div class="card text-center" style="width: 35rem;">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <i class=" fa fa-trash fa-4x card-img-top" aria-hidden="true" id='delete-icon'></i>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <h5 class="card-title"> Are you sure you want to delete</h5>
+                    <p class="card-text">  <strong>'{{ object.title }}' job</p>
+                    <p class="card-text">  <strong>with id : {{object.id}}</strong> ?</p>
+                </div>
+            
+                <div class="card-footer">
+                    <form method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-outline-warning mr-5"  id='filter-btn-jobs'>Yes</button>
+                        <a href="{% url 'jobs:my-jobs' %}" class="btn btn-outline-warning ml-5"  id='filter-btn-jobs'>No</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+{% endblock %}

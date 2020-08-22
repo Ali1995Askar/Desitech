@@ -1,0 +1,22 @@
+{% extends 'shared/_base.html' %}
+{% load static %}
+{% block title %} Filter jobs {% endblock %}
+{% block content%}
+<div class="container">
+    <a href="{% url 'jobs:all-jobs-list' %}" class='fa fa-arrow-circle-left fa-2x animate__animated animate__fadeInLeft mt-4'><strong> all jobs </strong></a>
+    <div  class="jumbotron mt-4">
+        <h1 class="display-4">Hello, Dear!</h1>
+        <p class="lead"><strong>Filter Return {{jobsCount}} jobs </strong></p>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-sm-10">
+            {% for job  in jobs %}
+            {% include "cards/JobsListCard.html" %} 
+            {% empty %}
+            <h2 class='text-center text-warning'>{{empty}}</h2>
+            {% endfor %}
+        </div>
+    </div>
+    
+</div>
+{% endblock %}

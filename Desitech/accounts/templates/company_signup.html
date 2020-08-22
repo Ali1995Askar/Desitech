@@ -1,0 +1,87 @@
+{% extends 'shared/_base.html' %}
+{% block title %} {{page_title}} {% endblock %}
+{% load static %}
+
+
+
+{% block content%}
+
+
+  <section class= 'theBody my-5 mx-auto'>
+     
+        <div class="title d-flex align-items-center justify-content-center text-center">
+          <div class="info">
+            <h2 class= 'companytitle'>Company Profile Information</h2>
+          </div>
+        </div>
+        
+            <div class="container">
+                <div class="row rounded shadow-lg">
+                    <div class="col-sm-12 px-5">
+                    <p class= 'lead text-center pb-3 text '>complete your company info to rigester <br>thanks for fill in form.</p>
+                        <form method="post" id="Countries" data-cities-url="{% url 'jobs:ajax_load_cities' %}" novalidate>
+                        {% csrf_token %}
+                          <div class="form-group">
+                            <label for="id_Name">{{company_profile_form.Name.label}}</label>
+                            {{company_profile_form.Name}}
+                          <small class = 'text-muted'> {{company_profile_form.Name.errors}} </small>
+                          </div>
+                         
+                          <div class="form-group">
+                              
+                            <label for="id_country">{{company_profile_form.country.label}}</label>
+                            {{company_profile_form.country}}
+                             <small class = 'text-muted'>  {{company_profile_form.country.errors}} </small>
+                          </div>
+                        
+                          <div class="form-group">
+                            <label for="id_city">{{company_profile_form.city.label}}</label>
+                              {{company_profile_form.city}}
+                              <small class = 'text-muted'>  {{company_profile_form.city.errors}} </small>
+                          </div>
+                         
+                          <div class="form-group">
+                            <label for="id_zip_code">{{company_profile_form.zip_code.label}}</label>
+                            {{company_profile_form.zip_code}}
+                              <small class = 'text-muted'>  {{company_profile_form.zip_code.errors}} </small>
+                          </div>
+                        
+                          <div class="form-group">
+                            <label for="id_street">{{company_profile_form.street.label}}</label>
+                            {{company_profile_form.street}}
+                             <small class = 'text-muted'>  {{company_profile_form.street.errors}} </small>
+                          </div>
+                         
+                          <div class="form-group">
+                            <label for="id_building_number">{{company_profile_form.building_number.label}}</label>
+                            {{company_profile_form.building_number}}
+                             <small class = 'text-muted'>  {{company_profile_form.building_number.errors}} </small>
+                          </div>
+                         
+                          <div class="form-group">
+                              <label for="id_phone_number">{{company_profile_form.phone_number.label}}</label>
+                               {{company_profile_form.phone_number}}
+                                <small class = 'text-muted'>  {{company_profile_form.phone_number.errors}} </small>
+                          </div>
+                        
+                          <div class="form-group">
+                            <label for="id_mobile_number">{{company_profile_form.mobile_number.label}}</label>
+                            {{company_profile_form.mobile_number}}
+                             <small class = 'text-muted'>  {{company_profile_form.mobile_number.errors}} </small>
+                        </div>
+                      
+                             <div class="form-group">
+                                  <button type="submit" class='btn  my-3' id='myBtn'>continue</button>
+                                </div>
+                             
+                        </form>
+                      
+                    </div>
+                </div>
+            </div>
+       </section>
+
+
+{% endblock %}
+
+

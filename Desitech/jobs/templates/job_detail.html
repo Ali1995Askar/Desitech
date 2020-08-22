@@ -1,0 +1,13 @@
+{% extends 'shared/_base.html' %}
+{% load static %}
+{% block title %} job details {% endblock %}
+{% block content%}
+    <div class="container">
+        <a href="{% url 'jobs:all-jobs-list' %}" class='fa fa-arrow-circle-left fa-2x animate__animated animate__fadeInDownBig mt-4'><strong> all jobs </strong></a>
+        <div  class="jumbotron mt-4 animate__animated animate__fadeInLeft">
+            <h1 class="display-4 ">Hello, Dear!</h1>
+            <p class="lead">This job is Publish by {{job.publish_By.company_profile.Name}} company in {{job.date}}.</p>
+        </div>
+        {% include "cards/jobDetailCard.html" %}
+    </div>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'shared/_base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% block title %} {{page_title}} {% endblock %}
+{% block content%}
+
+       <section class= 'theBody my-5 mx-auto'>
+       
+        <div class="title text-center">
+            <h2>sign up</h2>
+        </div>
+      
+            <div class="container">
+                <div class="row rounded shadow-lg">
+                    <div class="col-sm-12 px-5">
+                    <form method="post" >
+                    {% csrf_token %}
+                      
+                             <div class="form-group my-4">
+                                    <div class="input-group mb-3">
+                                         {{user_form.email}}
+                                    </div>
+                                    <small  class="form-text text-muted "> {{user_form.email.errors}}</small>
+                              </div>
+                             
+                              <div class="form-group my-4">
+                                    <div class="input-group mb-3">
+                                         {{user_form.password1}}
+                                    </div>
+                                    <small  class="form-text text-muted "> {{user_form.password1.errors}}</small>
+                              </div>
+                           
+                              <div class="form-group my-4">
+                                    <div class="input-group mb-3">
+                                        {{user_form.password2}}
+                                    </div>
+                                    <small  class="form-text text-muted "> {{user_form.password2.errors}}</small>
+                              </div>
+                            
+                              <div class="form-group">
+                              <legend class="col-form-label py-3">work nature</legend>
+                                {{user_form.user_type}}
+                          
+                              </div>
+
+                              <div class="form-group">
+                                <button type="submit" class='btn  my-3' id='myBtn'>sign up</button>
+                              </div>
+                           
+                        </form>
+
+                        <div class= 'text-center mb-5'>
+                            <h3 class= 'mb-3 social pb-3'>or connect with</h3>
+                            <div class= 'py-3'>
+                                <a href="#" class= 'btn'> <img src="{% static 'img/Facebook@3x.png' %}"> </a>
+                                <a href="#" class= 'btn'> <img src="{% static 'img/Instagram@3x.png' %}"> </a>
+                                <a href="#" class= 'btn'> <img src="{% static 'img/Twitter@3x.png' %}"> </a>
+                            </div>
+                        </div>
+                    
+                        <p class="text-center pb-5 links"> have an account ?  <a href={% url 'accounts:login' %}>sign in</a></p>
+                    </div>
+                </div>
+            </div>
+       </section>
+  
+{% endblock %}

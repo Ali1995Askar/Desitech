@@ -1,0 +1,54 @@
+{% extends 'shared/_base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% block title %} {{page_title}} {% endblock %}
+{% block content%}
+  <section class= 'theBody my-5 mx-auto'>
+       <!--بداية الجزء العلوي-->
+        <div class="title text-center align-items-center justify-content-center">
+            <h2>sign in</h2>
+        </div>
+        <!--نهاية الجزء العلوي-->
+        <!--بداية جزء النموذج-->
+            <div class="container">
+                <div class="row rounded shadow-lg">
+                    <div class="col-sm-12 px-5">
+                        <form method = 'post'>
+                        {% csrf_token %}
+                             <div class="form-group my-4">
+                                {{signin_form.username}}
+                              </div>
+                              <!--نهاية الايميل-->
+                              <!--بداية كلمة السر-->
+                               
+                             <div class="form-group my-4">
+                               {{signin_form.password}}
+                             </div>
+                             
+                               <div class="form-group">
+                                <button type="submit" class='btn  my-3' id='myBtn'>login</button>
+                              </div>
+                             
+                        </form>
+                        {% if signin_form.errors %}
+                        <small  class="form-text text-muted ">Your username and password didn't match. Please try again.</small>     
+                       {% endif %}
+                    <div class="card-footer text-center"><a href = {% url 'accounts:password_reset' %}>Forget  password ?</a></div>
+                        <div class= 'text-center mb-5'>
+                            <h3 class= 'mb-3 social pb-3'>or connect with</h3>
+                            <div class= 'py-3'>
+                                <a href="#" class= 'btn'> <img src="{% static 'img/Facebook@3x.png' %}"> </a>
+                                <a href="#" class= 'btn'> <img src="{% static 'img/Instagram@3x.png' %}"> </a>
+                                <a href="#" class= 'btn'> <img src="{% static 'img/Twitter@3x.png' %}"> </a>
+                            </div>
+                        </div>
+                        <!--نهاية جزء مواقع التواصل الاجتماعي-->
+                        <p class="text-center pb-5 links"> don't have account ?  <a href={% url 'accounts:Register-User' %}>sign up</a></p>
+                    </div>
+                </div>
+            </div>
+            <!--نهاية جزء النموذج-->
+       </section>
+{% endblock %}
+
+

@@ -1,0 +1,141 @@
+<!DOCTYPE html> 
+{% load static %} 
+
+<html lang="en">
+
+{% block head %}
+<head>
+   <meta charset="UTF-8">
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/css/intlTelInput.min.css" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/css/intlTelInput.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/logo.png' %}" sizes="50x50"/>
+  <title>
+   {% block title %} {% endblock %}
+  </title>
+  </head>
+
+{% endblock head %}
+
+<body>
+
+ <header class= 'header'>
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand d-flex align-items-center justify-content-center" href="{% url 'home' %}">
+                        <h1 class="text-uppercase">desi 
+                            <img src= "{% static 'img/logo.png' %}" alt= 'logo' class="img-fluid">
+                            <span >tech</span></h1>
+                    </a>
+                    <button class="navbar-toggler  border-white" type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation">
+                       <i class="fa fa-bars icon-bar" aria-hidden="true"></i>
+                    </button>
+                  
+                    <div class="collapse navbar-collapse" id="navbarcollapse">
+                      <ul class="navbar-nav ml-auto text-capitalize">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="{% url 'home' %}">home </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'jobs:all-jobs-list' %}">jobs</a>
+                        </li>
+                        <li class="nav-item">
+                            {% if user.is_company or user.is_superuser %}
+                                <a class="nav-link" href="{% url 'jobs:my-jobs' %}">jobs dashBoard</a>
+                            {% endif %}
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contact-us' %}">contact us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'about-us' %}">about us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="account" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {% if not user.is_authenticated %}
+                                account
+                            {% elif user.is_company %}
+                                {{user.company_profile.Name}}
+
+                            {% elif user.is_job_seeker %}
+                                {{user.job_seeker_profile.Name}}
+                            {% endif %}
+                            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                          </a>
+                          <div class="dropdown-menu animate__animated animate__zoomIn" aria-labelledby="account">
+                            <a class="dropdown-item" href="{% url 'accounts:Register-User' %}">sign up</a>
+                            {% if not user.is_authenticated %}
+                                <a class="dropdown-item" href="{% url 'accounts:login' %}">sign in</a>
+                            {% endif %}
+                            {% if  user.is_authenticated %}
+                                <a class="dropdown-item" href="{% url 'accounts:logout' %}">log out</a>
+                            {% endif %}
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+            </div>
+    </header>
+
+    {% block content %} {% endblock %}
+
+<footer>
+        <div class="footer-top mt-5">
+            <div class="container">
+                <div class="row align-items-center justify-content-center text-center">
+                    <div class=" col-md-3 col-sm-6 one mt-3">
+                        <img src="{% static 'img/logo.png' %}" alt="" class="img-fluid" width="200px" height="200px">
+                    </div>
+                    <div class=" col-md-3 col-sm-6 two mt-3 ">
+                        <ul class= 'list-unstyled'>
+                            <li class= ''><a href="#">platform</a></li>
+                            <li class= '' ><a href="#">help center</a></li>
+                            <li class= ''><a href="#">security</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-6 two mt-3">
+                        <ul class= 'list-unstyled'>
+                            <li class= ''><a href="#">customers</a></li>
+                            <li class= '' ><a href="#">use cases</a></li>
+                            <li class= ''><a href="#">customers services</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-6 two mt-3">
+                        <ul class= 'list-unstyled'>
+                            <li class= ''><a href="#">company</a></li>
+                            <li class= '' ><a href="#">about us</a></li>
+                            <li class= ''><a href="#">career we're hiring</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <p class= 'footer-text text-capitalize mb-0 py-3 border-top'>
+                    all right reserved by &copy; desttech 2020
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput.min.js"></script>
+   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+
+{% endblock scripts %}
+
+</html>
