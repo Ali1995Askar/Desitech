@@ -1,48 +1,35 @@
 
-from jobs.models import Job
-from jobs.api.serializers.JobSerializer import JobSerializer
 
+from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from jobs.models import Job
+from jobs.api.serializers.JobSerializer import JobSerializer
 from rest_framework.permissions import AllowAny , IsAuthenticated
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
 
-
-class JobById(APIView):
+class JobsByCity(APIView):
     # permission_classes = (AllowAny,)
     permission_classes = (IsAuthenticated,)
     authentication_class = JSONWebTokenAuthentication
     
-    def get(self, request, pk ,  format=None):
 
-        try:
-
-            job= Job.job_manger.get( pk=pk)
-            jobDeatils = JobSerializer(job)
+    def get(self, request , city_id , format=None):
+        try: 
+            jobs = Job.job_manger.filter(city = city_id)
+            jobsByCompany = JobSerializer(jobs, many=True)
             status_code = status.HTTP_200_OK
-            response = {'job' : jobDeatils.data ,}
+            response = {'all jobs By city' : jobsByCompany.data , }
             return Response(response , status_code)
 
-        except Exception as err:
+        except Exception as err :
             status_code = status.HTTP_404_NOT_FOUND
-            response = {'error' : str (err) ,}
+            response = {'error' : str (err) , }
             return Response (response , status_code)
-
-
-
-
-
-
-# class JobDeatils(APIView):
-  
-#     def get(self, request , pk, format=None ):
-#         jobs = job.job_manger.get( pk=pk)
-#         jobq = JOBSerializer(jobs)
-#         return Response(jobq.data)
-
-
+          
+          
 
 
 

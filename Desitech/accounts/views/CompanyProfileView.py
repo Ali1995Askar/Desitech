@@ -6,7 +6,7 @@ from accounts.forms import UserForm , CompanyForm
 from accounts.models.User import User
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
-from Desitech.decorators import is_company , has_profile
+from Desitech.decorators import is_company , doesnt_have_profile
 
 
 
@@ -15,7 +15,7 @@ login_decorator = login_required (login_url = 'accounts:login')
 
 @method_decorator(login_decorator, name='dispatch')
 @method_decorator(is_company, name='dispatch')
-@method_decorator(has_profile, name='dispatch')
+@method_decorator(doesnt_have_profile, name='dispatch')
 
 
 # Create your views here.

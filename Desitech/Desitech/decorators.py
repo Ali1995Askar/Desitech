@@ -3,7 +3,7 @@ from functools import wraps
 from accounts.models.JobSeekerProfile import job_seeker_profile
 from accounts.models.CompanyProfile import Company_profile
 from jobs.models import Job
-
+from django.shortcuts import redirect
 
 
 def company_is_publish_job(function):
@@ -56,20 +56,39 @@ def is_company_or_admin(function):
              raise PermissionDenied
   return wrap
 
-def has_profile(function):
-  @wraps(function)
-  def wrap(request, *args, **kwargs):
+def doesnt_have_profile(function):
+     @wraps(function)
+     def wrap(request, *args, **kwargs):
           if request.user.user_type == 1 :
                profile  = Company_profile.objects.filter (user = request.user.id)
-             
-               if len(profile) <  1:
+              
+               if not profile:
+                    return function(request, *args, **kwargs)
+               else:
+                   raise PermissionDenied
+          if request.user.user_type == 2 :
+               profile  = job_seeker_profile.objects.filter (user = request.user.id)
+               if not profile:
+                    return function(request, *args, **kwargs)
+               else:
+                    raise PermissionDenied
+     return wrap
+
+
+def have_profile(function):
+     @wraps(function)
+     def wrap(request, *args, **kwargs):
+          if request.user.user_type == 1 :
+               profile  = Company_profile.objects.filter (user = request.user.id)
+               
+               if  profile:
                     return function(request, *args, **kwargs)
                else:
                     raise PermissionDenied
           if request.user.user_type == 2 :
                profile  = job_seeker_profile.objects.filter (user = request.user.id)
-               if len(profile) <  1:
+               if  profile:
                     return function(request, *args, **kwargs)
                else:
                     raise PermissionDenied
-  return wrap
+     return wrap

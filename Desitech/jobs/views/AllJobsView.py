@@ -9,7 +9,6 @@ class AllJobsView(ListView):
     model = Job
     template_name = 'list_jobs.html'
     context_object_name = 'jobs'
-  
     ordering = ['date']
     jobs = Job.job_manger.all()
     

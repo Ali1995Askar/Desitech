@@ -5,43 +5,43 @@
 
   <div class="container mt-5">
   <div class='row'>
-  <div class='col-lg-6 col-md-6 col-sm-12 col-xs-6'>
-      <div class="row justify-content-start animate__animated animate__fadeInUp">
-          <form method='post' action = {% url 'jobs:job-filter-by-city'%}>
-              <h3 class="text-muted">Filter by city</h3>
-                <div class="input-group mb-5">
-                    {% csrf_token %}
-                    <select class="custom-select " id='filter-select-jobs' name='city'>
-                      {% for city in Cities %}
-                        <option>{{city}}</option>
-                      {% endfor %}
-                    </select>
-                    <input type = 'submit' value ='Filter Jobs' class='btn btn-outline-warning   ml-5' id='filter-btn-jobs'>
-                </div>
-          </form>
+        <div class='col-lg-6 col-md-6 col-sm-12 col-xs-6'>
+            <div class="row justify-content-start animate__animated animate__fadeInUp">
+                <form method='post' action = {% url 'jobs:job-filter-by-city'%}>
+                    <h3 class="text-muted">Filter by city</h3>
+                      <div class="input-group mb-5">
+                          {% csrf_token %}
+                          <select class="custom-select " id='filter-select-jobs' name='city'>
+                            {% for city in Cities %}
+                              <option>{{city}}</option>
+                            {% endfor %}
+                          </select>
+                          <input type = 'submit' value ='Filter Jobs' class='btn btn-outline-warning   ml-5' id='filter-btn-jobs'>
+                      </div>
+                </form>
+              </div>
         </div>
-      </div>
 
        <div class='col-lg-6 col-md-6 col-sm-12 col-xs-6'>
-      <div class="row justify-content-start animate__animated animate__fadeInUp">
-          <form method='post' action = {% url 'jobs:job-filter-by-Company'%}>
-              <h3 class="text-muted">Filter by Company</h3>
-                <div class="input-group mb-5">
-                    {% csrf_token %}
-                    <select class="custom-select " id='filter-select-jobs' name='company'>
-                      {% for company in Companies %}
-                        <option>{{company.Name}}</option>
-                      {% endfor %}
-                    </select>
-                    <input type = 'submit' value ='Filter Jobs' class='btn btn-outline-warning   ml-5' id='filter-btn-jobs'>
-                    {{user.id}}
-                </div>
-          </form>
-        </div>
+          <div class="row justify-content-start animate__animated animate__fadeInUp">
+            <form method='post' action = {% url 'jobs:job-filter-by-Company'%}>
+                <h3 class="text-muted">Filter by Company</h3>
+                  <div class="input-group mb-5">
+                      {% csrf_token %}
+                      <select class="custom-select " id='filter-select-jobs' name='company'>
+                        {% for company in Companies %}
+                          <option>{{company.Name}}</option>
+                        {% endfor %}
+                      </select>
+                      <input type = 'submit' value ='Filter Jobs' class='btn btn-outline-warning   ml-5' id='filter-btn-jobs'>
+                    
+                  </div>
+            </form>
+          </div>
       </div>
   </div>
-      <div  class="jumbotron mt-3 animate__animated animate__fadeIn">
-        <h1 class="display-4">This is list of all jobs , ( got {{jobsCount}} jobs )</h1>
+      <div  class="jumbotron mt-3 animate__animated animate__fadeInLeftBig">
+        <h1 class="display-4"> List of all jobs , ( got {{jobsCount}} jobs )</h1>
         <p class="lead"><strong>you can read more and apply by press More details</strong></p>
       </div>
       <div class="row justify-content-md-center">

@@ -5,7 +5,7 @@ from django.utils.decorators import method_decorator
 from django.urls import reverse
 from jobs.models import Job ,City
 from jobs.forms.JobCreateForm import JobForm
-from Desitech.decorators import  is_company , is_company_or_admin
+from Desitech.decorators import  is_company , is_company_or_admin , have_profile
 from django.contrib.auth.decorators import login_required
 
 login_decorator = login_required (login_url = 'accounts:login')
@@ -13,7 +13,7 @@ login_decorator = login_required (login_url = 'accounts:login')
 
 @method_decorator(login_decorator, name='dispatch')
 @method_decorator(is_company_or_admin, name='dispatch')
-
+@method_decorator(have_profile, name='dispatch')
 
 class JobCreateView(CreateView):
     login_required = True

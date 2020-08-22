@@ -14,7 +14,7 @@ def JobsByRegion(request):
     try:
         city = City.objects.get (name= request.POST.get('city'))
         jobsByCity = Job.job_manger.filter (city=city)
-        msg = 'No jobs to view in {} city'.format(str (city)) 
+        msg = 'No jobs view in {} city'.format(str (city)) 
         jobsCount = len (jobsByCity)
         context = { 'jobs' : jobsByCity , 'jobsCount' : jobsCount, 'empty' :msg ,}
         return render (request , 'JobSearh.html' , context)
