@@ -49,8 +49,8 @@ class ResetPassword (View):
                     
                     try:
                         send_mail(subject, email, EMAIL_HOST_USER , [user.email], fail_silently=False)
-                    except Exception:
-                        return HttpResponse('Invalid request, check your internet connection or try again !!.')
+                    except Exception as err:
+                        return HttpResponse('Invalid request, check your internet connection or try again !!.' , err )
 
                     return redirect ("/accounts/password_reset/done/")  
             else:
