@@ -1,26 +1,5 @@
 /*footer*/
 
-body {
-    color: red;
-}
-
-footer {
-    color: white !important;
-}
-
-li {
-    margin-top: 20px;
-    margin-bottom: 20px
-}
-
-.row-1 {
-    background-color: #1E242A !important
-}
-
-.row-2 {
-    background-color: #28323C !important
-}
-
 .edit-jobs:hover {
     transform: scale(1.1);
     transition: all 0.5s ease;
@@ -44,12 +23,6 @@ li {
 
 
 /*********************************************************************/
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 
 /* بداية الكارت*/
@@ -237,6 +210,8 @@ input[type=password] {
 
 /*  جزء الناف*/
 
+
+/* 
 .header .navbar {
     padding: 0;
 }
@@ -296,7 +271,7 @@ input[type=password] {
 .dropdown .dropdown-menu .dropdown-item:hover {
     background: #4267b2;
     color: #fff;
-}
+} */
 
 #delete-icon {
     color: #4267b2;
@@ -366,10 +341,88 @@ textarea.form-control {
 }
 
 
-/* footer*/
+/*nav bar*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 1000px;
+}
+
+.header {
+    background: #4267b28e;
+    border-bottom: 2px solid#ccc;
+}
+
+
+/*  جزء الناف*/
+
+.header .navbar {
+    padding: 0;
+}
+
+.navbar-brand img {
+    width: 100px;
+    height: 100px;
+    padding: 0;
+}
+
+.navbar-brand h1 {
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: bolder;
+}
+
+.navbar-brand h1 span {
+    color: rgb(220, 235, 85);
+}
+
+.header .navbar .navbar-toggler .icon-bar {
+    color: #fff !important;
+}
+
+.header .navbar #navbarcollapse .nav-item .nav-link {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 15px 10px 15px;
+    line-height: 1.2;
+}
+
+.dropdown-toggle::after {
+    content: none;
+}
+
+.dropdown .dropdown-menu {
+    border: 2px solid #4267b2;
+    border-radius: 15px;
+    overflow: hidden;
+    translate: all 0.2s ease-in;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+.dropdown .dropdown-menu .dropdown-item {
+    color: #4267b2;
+}
+
+.dropdown .dropdown-menu .dropdown-item:hover {
+    background: #4267b2;
+    color: #fff;
+}
+
+
+/*footer*/
 
 .footer-top {
-    background: linear-gradient(66deg, #4267b2, rgba(0, 0, 0, 0.555), #4267b2);
+    background: linear-gradient(66deg, #4267b263, rgba(0, 0, 0, 0.473), #4267b263);
     padding: 30px 0 5px;
     color: #fff;
 }
@@ -378,6 +431,13 @@ textarea.form-control {
     font-size: 1.2rem;
     font-weight: bold;
     font-style: italic;
+}
+
+.one p {
+    font-size: 0.7rem;
+    text-align: left;
+    text-align: justify;
+    font-weight: bold;
 }
 
 .two ul li {
@@ -396,4 +456,294 @@ textarea.form-control {
     text-align: center;
     color: #fff;
     line-height: 1;
+}
+
+
+/*اhome page*/
+
+
+/*جزء المعلومات وزر البحث */
+
+.mycontentdate {
+    width: 100%;
+    padding: 150px 0;
+    background: linear-gradient(-20deg, #4267b2 30%, rgb(66, 197, 236) 40%, #4267b2 30%);
+}
+
+.mycontentdate .dashs {
+    bottom: -35%;
+}
+
+.mycontentdate .dashs li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.mycontentdate .img-box {
+    width: 100%;
+}
+
+.mycontentdate .content h2 {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+
+.mycontentdate .content p {
+    color: #fff;
+    font-size: 1.4rem;
+    font-style: italic;
+    padding-left: 2%;
+    line-height: 1.6;
+}
+
+#btnSearch {
+    width: 40%;
+    background: #fff;
+    color: #4267b2;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 30px;
+    cursor: pointer;
+    line-height: 2;
+    translate: all 0.5 ease;
+}
+
+#btnSearch:hover {
+    background: #4267b2;
+    color: #fff;
+    border: 1px solid #fff;
+    box-shadow: 6px 18px 17px -8px #ddd;
+}
+
+
+/* نهاية جزء المعلومات وزر البحث*/
+
+
+/*جزء لماذا*/
+
+.content-box {
+    padding: 60px 0;
+    height: 100%;
+    width: 100%;
+}
+
+.content-box h1 {
+    font-weight: 600;
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 50px;
+    text-transform: capitalize;
+}
+
+.content-box h1::after {
+    content: '';
+    background: #4267b2;
+    display: block;
+    height: 5px;
+    width: 20%;
+    margin: 20px auto;
+}
+
+.card {
+    border: 2px solid #4267b2;
+}
+
+.icon-area {
+    color: #4267b2;
+    margin: 40px auto;
+}
+
+.single:hover .side-two {
+    transform: rotateY(0deg);
+    border-radius: 5px;
+}
+
+.single:hover .side-one {
+    transform: rotateY(180deg);
+    border-radius: 5px;
+}
+
+.content-area {
+    transform: perspective(1000px);
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.side-one {
+    position: relative;
+    transform: rotateY(0deg);
+    z-index: 2;
+    margin-bottom: 20px;
+}
+
+.side-two {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    transform: rotateY(-180deg);
+}
+
+.side-one,
+.side-two {
+    backface-visibility: hidden;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.side-one .card,
+.side-two .card {
+    min-height: 350px;
+}
+
+.card h4 {
+    color: #000;
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: capitalize;
+}
+
+.card p {
+    color: #4267b2;
+    text-align: center;
+    font-size: 1rem;
+    font-style: italic;
+    padding: 10px 0;
+}
+
+
+/*نهاية جزء لماذا*/
+
+
+/*جزء المميزات*/
+
+.feature {
+    width: 100%;
+    background: linear-gradient(20deg, #4267b2 30%, rgb(66, 197, 236) 40%, #4267b2 30%);
+}
+
+.feature h2 {
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.feature ul li {
+    color: #fff;
+    line-height: 1.8;
+    font-size: 1rem;
+    position: relative;
+}
+
+.feature ul li::after {
+    content: '';
+    height: 5px;
+    width: 5px;
+    background: #fff;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    left: -5%;
+}
+
+
+/* نهاية جزء المميزات*/
+
+
+/*جزء الاحصاءات*/
+
+.statistics {
+    background-image: linear-gradient( #4267b263, rgba(0, 0, 0, 0.473), #4267b263), url(../images/Rectangle@3x.png);
+    background-size: cover;
+    background-position: center;
+    padding: 30px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.content {
+    padding: 20px 0;
+}
+
+.content .counter {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin: 20px auto;
+    text-align: center;
+}
+
+
+/*نهاية جزء الاحصاءات*/
+
+
+/* جزء العملاء*/
+
+.testimonial {
+    margin: 50px auto;
+}
+
+.testimonial h3 {
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.testimonial h3::after {
+    content: '';
+    background: #4267b2;
+    display: block;
+    height: 5px;
+    width: 20%;
+    margin: 20px auto 5px;
+}
+
+.testimonial p {
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.testimonial .profile {
+    padding: 70px 1% 10px;
+    transition: 0.7s;
+    background: #4267b24f;
+    cursor: pointer;
+}
+
+.testimonial .profile:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px 5px #ccc;
+}
+
+.profile img {
+    width: 120px;
+    height: 120px;
+    margin-top: -40%;
+    border: 5px solid #fff;
+    border-radius: 50%;
+}
+
+.profile blockquote {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.profile blockquote .fa {
+    color: #4267b2;
+}
+
+.profile h4 {
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #fff;
 }

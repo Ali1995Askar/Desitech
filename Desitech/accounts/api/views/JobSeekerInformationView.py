@@ -23,7 +23,6 @@ class JobSeekerInformationView(CreateAPIView):
               
                 jsonsString = request.data['data']
                 jsonString = jsonsString.replace ("\'" , "\"")
-                
                 data = json.loads(jsonString);
                
                
