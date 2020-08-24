@@ -11,7 +11,7 @@ def index (request):
         list_text.append (randomText)
     context = {'page_title' : 'home' , 'text' : list_text , 
                 'happy_clients' : happy_clients , 'job_post' : 1000 , 
-                'condidates' : 1400 , 'job_filled' : 700 , 'companies' : 400}
+                'clients' : 1400 , 'job_filled' : 700 , 'companies' : 400}
     return render (request , 'home.html' , context   )
 
 def about (request):

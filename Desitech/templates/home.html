@@ -189,7 +189,7 @@
                         {% for t in text  %}<li>{{t}}</li>{% endfor %}
                           
                         </ul>
-                        <button id="btnSearch" class="btn  my-3"> browse job</button>
+                        <a href="{% url 'jobs:all-jobs-list' %}" id="btnSearch" class="btn  my-3"> browse job</a>
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <img src={% static 'img/undraw_feeling_proud_qne1@3x.png' %}  alt="" class="img-fluid">
@@ -205,7 +205,8 @@
                         <ul class="list-unstyled mt-3 ml-5">
                              {% for t in text  %}<li>{{t}}</li>{% endfor %}
                         </ul>
-                        <button id="btnSearch" class="btn  my-3">post a job</button>
+                         <a  href="{% url 'jobs:my-jobs' %}" id="btnSearch" class="btn  my-3">post a job</a>
+                       
                     </div>
                 </div>
             </div>
@@ -224,8 +225,8 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="content">
-                        <div class="counter" data-target="{{condidates}}"></div>
-                        <h3 class= 'text-capitalize h3'>condidates</h3>
+                        <div class="counter" data-target="{{clients}}"></div>
+                        <h3 class= 'text-capitalize h3'>clients</h3>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
