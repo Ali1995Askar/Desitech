@@ -20,7 +20,7 @@ class job_seeker_profile (models.Model):
     surname = models.CharField(max_length=30 , null=True)
     country = models.ForeignKey(Country, on_delete=models.SET_NULL, null=True)
     city = models.ForeignKey(City, on_delete=models.SET_NULL, null=True)
-    country_of_residence = models.CharField(max_length=50 , null=True)
+    nationality = models.CharField(max_length=50 , null=True)
     birth_date = models.DateField(blank=True, null=True)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES , null=True)
     zip_code =  models.CharField("ZIP / Postal code", max_length=12,null=True)

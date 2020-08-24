@@ -1,7 +1,7 @@
 from rest_framework.generics import CreateAPIView 
 from accounts.models.CompanyProfile import Company_profile
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated , AllowAny
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 from rest_framework import status
 from rest_framework.views import APIView
@@ -10,16 +10,20 @@ from accounts.models.Country import Country
 from accounts.models.City import City
 
 class CompanyInformationView(CreateAPIView):
+    # permission_classes = (AllowAny,)
     permission_classes = (IsAuthenticated,)
     authentication_class = JSONWebTokenAuthentication
     
     def post(self, request):
-      
-
+        print ('************************headers***********************************')
+        print (request.headers)
+        print ('***********************************************************')
+        print (request.data)
+        print ('*************************data**********************************')
         if request.user.is_company :
             try:
                 Company_profile.objects.create(
-                    user=request.user , 
+                    user=request.user ,   
                     Name = request.data['Name'] ,
                     zip_code = request.data['zip_code'] ,
                     street = request.data['street'] ,
@@ -33,6 +37,7 @@ class CompanyInformationView(CreateAPIView):
                 status_code = status.HTTP_200_OK
                 response = {'success' : 'True','status code' : status_code}
             except Exception as err:
+                print ('error ::::: ' , err)
                 status_code = status.HTTP_406_NOT_ACCEPTABLE
                 response = {'error' : str(err) ,'status code' : status_code}
         

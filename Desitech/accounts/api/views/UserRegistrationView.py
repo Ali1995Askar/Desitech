@@ -14,11 +14,12 @@ class UserRegistrationView(CreateAPIView):
 
     def post(self, request):
         try:
+            print (request.data)
             serializer = self.serializer_class(data=request.data)
          
            
             serializer.is_valid(raise_exception=True)
-            print (serializer.is_valid())
+           
           
             serializer.save()
             status_code = status.HTTP_201_CREATED
@@ -28,5 +29,5 @@ class UserRegistrationView(CreateAPIView):
         except Exception as err:
             status_code = status.HTTP_409_CONFLICT
             response = {'error' : str (err)}
-
+          
         return Response(response, status=status_code)

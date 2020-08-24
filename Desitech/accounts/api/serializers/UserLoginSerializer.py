@@ -22,7 +22,8 @@ class UserLoginSerializer(serializers.Serializer):
     email = serializers.EmailField(max_length=255 , write_only = True)
     password = serializers.CharField(max_length=128, write_only=True)
 
-    user_id = serializers.CharField(max_length=128, read_only=True)
+    user_id = serializers.IntegerField( read_only=True)
+    user_type = serializers.IntegerField( read_only=True)
     token = serializers.CharField(max_length=255, read_only=True)
 
 
@@ -30,18 +31,19 @@ class UserLoginSerializer(serializers.Serializer):
         email = data.get("email", None)
         password = data.get("password", None)
         user = authenticate(email=email, password=password)
-      
+
         if user is None:
             raise serializers.ValidationError(
                 'A user with this email and password is not found.'
             )
        
-      
+    
+       
         payload = JWT_PAYLOAD_HANDLER(user)
         jwt_token = JWT_ENCODE_HANDLER(payload)
         update_last_login(None, user)
          
-        return {'user_id':str(user.id),'token': jwt_token } 
+        return {'user_id':user.id, 'user_type' : user.user_type ,'token': jwt_token } 
 
 
 

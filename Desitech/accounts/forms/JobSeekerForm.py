@@ -8,7 +8,7 @@ class signup_form (forms.ModelForm):
 
     class Meta:
         model = job_seeker_profile
-        fields = ( 'Name' , 'surname' , 'country' , 'city'  , 'country_of_residence' ,'birth_date' , 'CV' ,
+        fields = ( 'Name' , 'surname' , 'country' , 'city'  , 'nationality' ,'birth_date' , 'CV' ,
                     'gender' , 'street' , 'zip_code' , 'phone_number' ,
                     'house_number' , 'personal_photo' ,'cover_letter' ,'mobile_number' ,)
       
@@ -18,7 +18,7 @@ class signup_form (forms.ModelForm):
             'surname': forms.TextInput(attrs={'class': 'form-control', 'placeholder': "Surname"}),
             'country': forms.Select(attrs={'class': 'form-control custom-select', 'placeholder': "country"}),
             'city': forms.Select(attrs={'class': 'form-control custom-select', 'placeholder': "city "}),
-            'country_of_residence': forms.TextInput(attrs={'class': 'form-control', 'placeholder': "Country Of Residence"}),
+            'nationality': forms.TextInput(attrs={'class': 'form-control', 'placeholder': "Country Of Residence"}),
             'birth_date': forms.DateInput(attrs={'type':'date' , 'class': 'form-control select', 'placeholder': "birth date"}),
             'gender': forms.Select(attrs={'class': 'form-control', 'placeholder': "Gender"}),
             'zip_code': forms.TextInput(attrs={'class': 'form-control', 'placeholder': "Zip Code"}),

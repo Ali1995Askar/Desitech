@@ -11,9 +11,9 @@ from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
 
 class JobsByCity(APIView):
-    # permission_classes = (AllowAny,)
-    permission_classes = (IsAuthenticated,)
-    authentication_class = JSONWebTokenAuthentication
+    permission_classes = (AllowAny,)
+    # permission_classes = (IsAuthenticated,)
+    # authentication_class = JSONWebTokenAuthentication
     
 
     def get(self, request , city_id , format=None):

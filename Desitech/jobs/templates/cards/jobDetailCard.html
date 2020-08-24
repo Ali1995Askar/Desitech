@@ -6,8 +6,9 @@
     <div class="card-body text-dark">
 
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><p>{{ job.text }}</p></li>
+            <li class="list-group-item"><p>{{ job.abstract }}</p></li>
             <li class="list-group-item"><p>{{ job.skills }}</p></li>
+             <li class="list-group-item"><p>{{ job.description }}</p></li>
             <li class="list-group-item"><p><strong>Email: </strong>{{job.publish_By}}</p></li>
             <li class="list-group-item"><p><strong>Phone Number : </strong> {{job.publish_By.company_profile.phone_number}}</p></li>
             <li class="list-group-item"><p><strong>Mobile Number : </strong> {{job.publish_By.company_profile.mobile_number}}</p></li>

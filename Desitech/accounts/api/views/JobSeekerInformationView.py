@@ -10,7 +10,7 @@ from rest_framework.parsers import MultiPartParser
 from accounts.api.serializers.ProfileSerializer import JobSeekerProfileSerializer
 from accounts.models.Country import Country
 from accounts.models.City import City
-
+import json
 class JobSeekerInformationView(CreateAPIView):
     permission_classes = (IsAuthenticated,)
     authentication_class = JSONWebTokenAuthentication
@@ -20,28 +20,36 @@ class JobSeekerInformationView(CreateAPIView):
 
         if request.user.is_company :
             try:
+              
+                jsonsString = request.data['data']
+                jsonString = jsonsString.replace ("\'" , "\"")
+                
+                data = json.loads(jsonString);
+               
+               
                 job_seeker_profile.objects.create(
                     user=request.user , 
-                    Name = request.data['Name'] ,
-                    surname = request.data['surname'] ,
-                    country = Country.objects.get (id = int(request.data['country'])) ,
-                    city =  City.objects.get (id = int(request.data['city'])) ,
-                    country_of_residence =  request.data['country_of_residence'] ,
-                    birth_date =  request.data['birth_date'] ,
-                    gender =request.data['gender'] ,
-                    zip_code =  request.data['zip_code'] ,
-                    street =  request.data['street'] ,
-                    house_number =  request.data['house_number'] ,
-                    personal_photo =  request.data['personal_photo'] ,
+                    Name = data['Name'] ,
+                    surname = data['surname'] ,
+                    country = Country.objects.get (id = int(data['country'])) ,
+                    city =  City.objects.get (id = int(data['city'])) ,
+                    nationality =  data['nationality'] ,
+                    birth_date =  data['birth_date'] ,
+                    gender =data['gender'] ,
+                    zip_code =  data['zip_code'] ,
+                    street =  data['street'] ,
+                    house_number =  data['house_number'] ,
+                    personal_photo =  request.FILES['personal_photo'] ,
                     CV =  request.FILES['CV'] ,
-                    cover_letter =  request.data['cover_letter'] ,
-                    phone_number =  request.data['phone_number'] ,
-                    mobile_number =  request.data['mobile_number'] ,
-
+                    cover_letter =  data['cover_letter'] ,
+                    phone_number =  data['phone_number'] ,
+                    # mobile_number =  data['mobile_number'] ,    
                     )
+
                 status_code = status.HTTP_200_OK
                 response = {'success' : 'True','status code' : status_code}
             except Exception as err:
+                print ('error:' , err)
                 status_code = status.HTTP_406_NOT_ACCEPTABLE
                 response = {'error' : str(err) ,'status code' : status_code}
         
