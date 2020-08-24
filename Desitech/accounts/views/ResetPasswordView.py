@@ -39,7 +39,7 @@ class ResetPassword (View):
 					"user": user,
 					'full_user_name' : name, 
 					"email":user.email,
-					'domain':'127.0.0.1:8000',
+					'domain':'http://aliaskar1333.pythonanywhere.com/',
 					'site_name': 'Desitech',
 					'uid': urlsafe_base64_encode(force_bytes(user.pk)),
 					'token': default_token_generator.make_token(user),
@@ -47,10 +47,10 @@ class ResetPassword (View):
 
                     email = render_to_string(email_template_name, info)
                     
-                    # try:
-                    send_mail(subject, email, EMAIL_HOST_USER , [user.email], fail_silently=False)
-                    # except Exception as err:
-                    #     return HttpResponse('Invalid request, check your internet connection or try again !!.' , err )
+                    try:
+                        send_mail(subject, email, EMAIL_HOST_USER , [user.email], fail_silently=False)
+                    except Exception as err:
+                        return HttpResponse('Invalid request, check your internet connection or try again !!.' , err )
 
                     return redirect ("/accounts/password_reset/done/")  
             else:
