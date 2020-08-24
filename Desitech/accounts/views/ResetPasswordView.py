@@ -52,4 +52,7 @@ class ResetPassword (View):
                     except Exception:
                         return HttpResponse('Invalid request, check your internet connection or try again !!.')
 
-                    return redirect ("/accounts/password_reset/done/")   
+                    return redirect ("/accounts/password_reset/done/")  
+            else:
+                return HttpResponse('Invalid Email, check your email this email is not valid!!.')
+
