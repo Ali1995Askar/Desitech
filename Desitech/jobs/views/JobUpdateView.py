@@ -19,7 +19,7 @@ class JobUpdateView(UpdateView):
     form_class = JobForm
     template_name = 'update_job.html'
     context_object_name = 'job'
-   
+  
 
     def get_success_url(self):
         return reverse('jobs:my-jobs')
