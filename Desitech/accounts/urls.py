@@ -1,7 +1,7 @@
 from django.urls import path , include
 from accounts.views import (
                                 CompanyProfileView , JobSeekerProfileView , RegisterUserView ,
-                                LogView , ResetPasswordView)
+                                LogView , ResetPasswordView , MyProfile)
 from django.contrib.auth import views as auth_views
 from django.urls import reverse_lazy
 from accounts.forms.SetNewPasswordForm import SetNewPasswordForm
@@ -19,9 +19,12 @@ urlpatterns = [
     path('rigester/', RegisterUserView.signup.as_view(), name='Register-User'),
     path('companyProfile/', CompanyProfileView.signup.as_view(), name='Company-profile'),
     path('jobSeekerProfile/', JobSeekerProfileView.signup.as_view(), name='JobSeeker-profile'),
-
+    path('MyProfile/', MyProfile.MyProfile.as_view(), name='My-profile'),
+    
     path('login/', LogView.log_user.as_view(), name='login'),
     path('logout/', LogView.logout_user, name='logout'),
+   
+   
 
 
     path("password_reset/", ResetPasswordView.ResetPassword.as_view(), name="password_reset"),

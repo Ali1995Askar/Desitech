@@ -1,0 +1,11 @@
+{% extends 'shared/_base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% block title %} {{page_title}} {% endblock %}
+{% block content%}
+
+<h1>hello company<h2>
+{{user}}
+ {{profile.Name}}
+   {{profile.phone_number}}
+{% endblock %}

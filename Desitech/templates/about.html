@@ -5,6 +5,68 @@
 
 {% block content%}
 
-<h1>about page </h1>
+<section class= 'aboutus mx-auto py-5 mt-5'>
+    <div class="container">
+        <div class="row align-items-center justify-content-center my-3">
+            <div class="col-md-7 col-sm-12">
+                <h2 class=" mb-5 text-center animate__animated animate__pulse animate__infinite infinite">about us</h2>
+                <p class="animate__animated animate__zoomIn">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias quisquam at, similique laudantium quod eos. Id quis soluta eum quo asperiores nobis distinctio. Blanditiis rem, et veniam voluptas perspiciatis ullam!</p>
+                <p class="animate__animated animate__zoomIn">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim repellendus ducimus voluptatibus nemo labore quam recusandae modi aspernatur quasi illum, accusamus quibusdam harum ipsam obcaecati esse pariatur. Ipsam, exercitationem debitis?</p>
+                <p class="animate__animated animate__zoomIn">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit saepe, quis magnam quibusdam doloremque labore deleniti facere. Deleniti ipsa libero facilis explicabo, dolorum tempore voluptas modi eaque, velit iusto nihil.</p>
+            </div>
+            <div class="col-md-5 col-sm-12">
+                <div class="pic animate__animated animate__fadeInLeftBig">
+                    <img src="{% static 'img/logo.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!--نهاية جزء من نحن-->
+<!--جزء الفريق-->
+    <section class="ourteam mt-5">
+        <div class="container">
+            <h3 class="text-center"> our team </h3>
+            <p class="text-center lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere accusantium atque deleniti.</p>
+            <div class="row mt-3"> 
+                <div class="col-md-6 col-sm-12 text-center my-5 animate__animated animate__flipInX">
+                    <div class="single-content" id="our-team-shadow-img">
+                        <img src="{% static 'img/ehab.jpg' %}" alt="">
+                        <div class="text-content">
+                            <h4 class="h2">Ehab Abiedo <span class="h6"> , Germany</span></h4>
+                            <h5 class="h3">CEO <span class="h6"> , 27 years old</span></h5>
+                            <p class= 'h4'>Business Administration Studies , Computer science  </p>
+                            <p class= 'h4'>What we do isn't about money, it's about how to make you happy.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 text-center my-5 animate__animated animate__flipInX">
+                    <div class="single-content" id="our-team-shadow-img">
+                         <img src="{% static 'img/ali askar.jpg' %}" alt="">
+                        <div class="text-content">
+                            <h4 class="h2">Ali Askar<span class="h6"> , Syria</span></h4>
+                            <h5 class="h3">Web Development Director <span class="h6"> , 25 years old</span></h5>
+                            <p class= 'h4'>Software Engineering and Information Systems</p>
+                            <p class= 'h4'>A satisfied Customer is the best Business Startegy of All.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 text-center my-5 animate__animated animate__flipInX">
+                    <div class="single-content" id="our-team-shadow-img">
+                        <img src="{% static 'img/female.png' %}" alt="">
+                        <div class="text-content">
+                              <h4 class="h2">Shimaa<span class="h6"> , Egypt</span></h4>
+                            <h5 class="h3">frontend Developer<span class="h6"> , 33 years old</span></h5>
+                            <p class= 'h4'>Software Engineering and Information Systems</p>
+                            <p class= 'h4'>A satisfied Customer is the best Business Startegy of All.</p>
+                        </div>
+                    </div>
+                </div>
+               
+               
+            </div>
+        </div>
+    </section>
 
 {% endblock %} 

@@ -22,13 +22,13 @@ class User (AbstractBaseUser , PermissionsMixin):
     _TYPE = ((COMPANY , 'company') , (JOB_SEEKER , 'job_seeker') )
     user_type  = models.PositiveSmallIntegerField (choices=_TYPE  )
 
-
+    @property
     def is_company (self):
       
         if self.user_type == 1:
             return True
         return False
-
+    @property
     def is_job_seeker (self) :
         if self.user_type == 2:
             return True

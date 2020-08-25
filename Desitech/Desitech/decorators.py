@@ -74,7 +74,6 @@ def doesnt_have_profile(function):
                     raise PermissionDenied
      return wrap
 
-
 def have_profile(function):
      @wraps(function)
      def wrap(request, *args, **kwargs):

@@ -39,7 +39,7 @@ class ResetPassword (View):
 					"user": user,
 					'full_user_name' : name, 
 					"email":user.email,
-					'domain':'http://aliaskar1333.pythonanywhere.com',
+					'domain':request.META['HTTP_HOST'],
 					'site_name': 'Desitech',
 					'uid': urlsafe_base64_encode(force_bytes(user.pk)),
 					'token': default_token_generator.make_token(user),
