@@ -24,11 +24,15 @@ class AddJob(CreateAPIView):
             if request.user.is_company :
                 try:
 
-                    serializer = self.serializer_class(data=request.data)
-
-                    serializer.is_valid(raise_exception=True)
-
-                    serializer.save()
+                    Job.job_manger.create(
+                        publish_By=request.user ,   
+                        title = request.data['title'] ,
+                        skills = request.data['skills'] ,
+                        abstract = request.data['abstract'] ,
+                        description = request.data['description'] ,
+                        country = Country.objects.get (id = int(request.data['country'])) ,
+                        city =  City.objects.get (id = int(request.data['city'])) ,
+                        )
 
                     status_code = status.HTTP_200_OK
                     response = {'success' : 'True'}
