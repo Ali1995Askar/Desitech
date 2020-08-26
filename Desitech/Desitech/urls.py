@@ -11,7 +11,7 @@ urlpatterns = [
     path ('jobs/' , include ('jobs.urls') ) ,
     path ('' , views.index , name='home') ,
     path ('aboutus/' , views.about , name='about-us'),
-    path ('contactus/' , views.contact , name='contact-us')
+    path ('contactus/' , views.Contact.as_view(), name='contact-us')
 ]
 
 

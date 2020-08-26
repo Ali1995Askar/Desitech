@@ -12,10 +12,7 @@ class signup_form (forms.ModelForm):
         model = Company_profile
         fields = ("Name" , 'country' , 'city' 
         , "zip_code" , "street" , "building_number" , "phone_number" , "mobile_number")
-        labels= {
-            'Name': '', 'country': '', 'city': '',  'zip_code': '', 'street': '', 'building_number': '', 'phone_number': '',
-            'mobile_number': '',
-        }
+       
         widgets = {
             'Name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': "Company Name "} , ),
             'country': forms.Select(attrs={'class': 'form-control custom-select', 'placeholder': "country"}),

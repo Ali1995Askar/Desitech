@@ -18,5 +18,5 @@ class Company_profile (models.Model):
     
     phone_number = models.CharField( validators=[phone_regex] , max_length=17 , null=True) 
     mobile_number = models.CharField( validators=[phone_regex] ,max_length=17 , null=True) 
-    
+
    

@@ -6,6 +6,7 @@ from accounts.models.CompanyProfile import Company_profile
 from accounts.models.JobSeekerProfile import job_seeker_profile
 from accounts.models.Country import Country
 from accounts.models.City import City
+from accounts.models.ContactUs import ContactUs
 from django.contrib.auth.models import Group
 
 
@@ -69,6 +70,7 @@ admin.site.unregister(Group)
 admin.site.register(User, CustomUserAdmin)
 admin.site.register (City )
 admin.site.register (Country )
+admin.site.register (ContactUs)
 
 admin.site.site_header = 'Desitech'
 admin.site.site_title = 'Desitech'

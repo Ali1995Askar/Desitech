@@ -2,8 +2,78 @@
 {% block title %} {{page_title}} {% endblock %}
 {% load static %} 
 {% block content%}
-
-<h1>contact page</h1>
+{{contact_form}}
+  {% comment %} <section class="contactus mx-auto py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col">
+                    <div class="card card-body border-0 shadow">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card py-5 card-body border-0 leftside">
+                                    <h3 class="mb-4">contact us</h3>
+                                    <div class="media mb-5 align-items-center">
+                                        <div class= 'iconBox mr-3'>
+                                            <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="media-body">
+                                          <p class="mt-0 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, delectus</p>
+                                        </div>
+                                    </div>
+                                    <div class="media mb-5 align-items-center">
+                                        <div class= 'iconBox mr-3'>
+                                            <i class="fa fa-mobile fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="media-body">
+                                          <p class="mt-0 text-white">+ 200 01000 000 0000</p>
+                                        </div>
+                                    </div>
+                                    <div class="media mb-5 align-items-center">
+                                        <div class= 'iconBox mr-3'>
+                                            <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="media-body">
+                                          <p class="mt-0 text-white">+ 200 1234567890</p>
+                                        </div>
+                                    </div>
+                                    <div class="media mb-5 align-items-center">
+                                        <div class= 'iconBox mr-3'>
+                                            <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>                                        </div>
+                                        <div class="media-body">
+                                          <p class="mt-0 text-white">gmail123@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <div class="socialBox ">
+                                        <ul class='list-unstyled '>
+                                            <li><a href="#"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8 mt-5">
+                                <form action="" class="my-auto">
+                                    
+                                    <div class="form-group ">
+                                        <label for="name">Subject :</label>
+                                        <input type="text" class="form-control" id="name" placeholder="your name">
+                                    </div>
+                                    <div class="form-group mt-5">
+                                        <label for="description">Message :</label>
+                                        <textarea class="form-control" id="description" placeholder= 'Write your message here'></textarea>
+                                    </div>
+                                        <div class="form-group clearfix">
+                                        <a class='btn myBtn my-3 text-uppercase float-right' href='#'>send</a>
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> {% endcomment %}
 
 
 {% endblock %} 

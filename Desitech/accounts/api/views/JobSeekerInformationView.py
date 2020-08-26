@@ -42,7 +42,7 @@ class JobSeekerInformationView(CreateAPIView):
                     CV =  request.FILES['CV'] ,
                     cover_letter =  data['cover_letter'] ,
                     phone_number =  data['phone_number'] ,
-                    # mobile_number =  data['mobile_number'] ,    
+                    mobile_number =  data['mobile_number'] ,    
                     )
 
                 status_code = status.HTTP_200_OK

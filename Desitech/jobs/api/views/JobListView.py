@@ -11,9 +11,9 @@ from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
 
 class AllJobsList(APIView):
-    permission_classes = (AllowAny,)
-    # permission_classes = (IsAuthenticated,)
-    # authentication_class = JSONWebTokenAuthentication
+    # permission_classes = (AllowAny,)
+    permission_classes = (IsAuthenticated,)
+    authentication_class = JSONWebTokenAuthentication
     
 
     def get(self, request, format=None):
@@ -21,7 +21,7 @@ class AllJobsList(APIView):
             jobs = Job.job_manger.all()
             allJobs = JobSerializer(jobs, many=True)
             status_code = status.HTTP_200_OK
-            response = {'all jobs' : allJobs.data , }
+            response = {'jobs' : allJobs.data , }
             return Response(response , status_code)
 
         except Exception as err :

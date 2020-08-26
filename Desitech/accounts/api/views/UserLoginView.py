@@ -19,7 +19,7 @@ class UserLoginView(RetrieveAPIView):
             serializer = self.serializer_class(data=request.data)
             
             serializer.is_valid(raise_exception=True)
-            print ('****' , serializer.data['user_type'])
+         
             response = {
                
                 'user_id' : serializer.data['user_id'] ,

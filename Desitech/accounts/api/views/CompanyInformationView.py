@@ -15,11 +15,7 @@ class CompanyInformationView(CreateAPIView):
     authentication_class = JSONWebTokenAuthentication
     
     def post(self, request):
-        print ('************************headers***********************************')
-        print (request.headers)
-        print ('***********************************************************')
-        print (request.data)
-        print ('*************************data**********************************')
+    
         if request.user.is_company :
             try:
                 Company_profile.objects.create(
@@ -37,7 +33,7 @@ class CompanyInformationView(CreateAPIView):
                 status_code = status.HTTP_200_OK
                 response = {'success' : 'True','status code' : status_code}
             except Exception as err:
-                print ('error ::::: ' , err)
+               
                 status_code = status.HTTP_406_NOT_ACCEPTABLE
                 response = {'error' : str(err) ,'status code' : status_code}
         

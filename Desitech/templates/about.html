@@ -5,11 +5,11 @@
 
 {% block content%}
 
-<section class= 'aboutus mx-auto py-5 '>
+<section class= 'aboutus mx-auto py-5'>
     <div class="container">
         <div class="row align-items-center justify-content-center my-3">
             <div class="col-md-7 col-sm-12">
-                <h2 class=" mb-5 text-center animate__animated animate__pulse animate__infinite infinite">about us</h2>
+                <h2 class=" mb-5 text-center animate__animated animate__pulse animate__infinite infinite">About us</h2>
                 <p class="animate__animated animate__zoomIn">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias quisquam at, similique laudantium quod eos. Id quis soluta eum quo asperiores nobis distinctio. Blanditiis rem, et veniam voluptas perspiciatis ullam!</p>
                 <p class="animate__animated animate__zoomIn">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim repellendus ducimus voluptatibus nemo labore quam recusandae modi aspernatur quasi illum, accusamus quibusdam harum ipsam obcaecati esse pariatur. Ipsam, exercitationem debitis?</p>
             </div>
@@ -20,7 +20,6 @@
             </div>
         </div>
     </div>
-
 </section>
 <!--نهاية جزء من نحن-->
 <!--جزء الفريق-->
@@ -28,49 +27,43 @@
         <div class="container">
             <h3 class="text-center"> our team </h3>
             <p class="text-center lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere accusantium atque deleniti.</p>
-            <div class="row mt-3"> 
-                <div class="col-md-6 col-sm-12 text-center my-5 animate__animated animate__flipInX">
-                    <div class="single-content" id="our-team-shadow-img">
+            <div class="row mt-3">
+                <div class="col-md-4 col-sm-12 text-center my-5 animate__animated animate__flipInX">
+                    <div class="single-content mx-auto" id="our-team-shadow-img">
                         <img src="{% static 'img/ehab.jpg' %}" alt="">
                         <div class="text-content">
-                            <h4 class="h2">Ehab Abiedo <span class="h6"> , Germany</span></h4>
-                            <h5 class="h3">chief executive officer <span class="h6"> , 27 years old</span></h5>
-                            <p class= 'h4'>Business Administration Studies , Computer science  </p>
-                            <h6 class="h4 mt-5">A few words from Ehab<span class="h6"></span></h6>
-                            <p class= 'h4 mt-5'>What we do isn't about money, it's about how to make you happy.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-12 text-center my-5 animate__animated animate__flipInX">
-                    <div class="single-content" id="our-team-shadow-img">
-                         <img src="{% static 'img/ali askar.jpg' %}" alt="">
-                        <div class="text-content">
-                            <h4 class="h2">Ali Askar<span class="h6"> , Syria</span></h4>
-                            <h5 class="h3">Web Development Director <span class="h6"> , 25 years old</span></h5>
-                            <p class= 'h4'>Software Engineering and Information Systems</p>
-                            <h6 class="h4 mt-5">A few words from Ali<span class="h6"></span></h6>
+                            <h5 class="h4 mt-1">Ehab Abiedo <span class="h6">, Germany</span></h5>
+                            <h5 class="h5 mt-3">CEO<span class="h6"> , 27 years old</span></h5>
+                            <p class= 'h4 mt-5'>Business Administration Studies , Computer science  </p>
                             <p class= 'h4 mt-5'>A satisfied Customer is the best Business Startegy of All.</p>
-                            
-                            <p class= 'h4'></p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-12 text-center my-5 animate__animated animate__flipInX">
-                    <div class="single-content" id="our-team-shadow-img">
+
+                <div class="col-md-4 col-sm-12 text-center my-5 animate__animated animate__flipInX">
+                    <div class="single-content mx-auto" id="our-team-shadow-img">
+                        <img src="{% static 'img/ali askar.jpg' %}" alt="">
+                        <div class="text-content">
+                            <h5 class="h4 mt-1">Ali Askar <span class="h6">, Syria</span></h5>
+                            <h6 class="h6 mt-3">Web Development Director<span class="h6"> , 25 years old</span></h6>
+                            <p class= 'h4 mt-5'>Master of web Sciences Studies , Software and Information Systems Engineering</p>
+                            <p class= 'h4 mt-5'>A satisfied Customer is the best Business Startegy of All.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-12 text-center my-5 animate__animated animate__flipInX">
+                    <div class="single-content mx-auto" id="our-team-shadow-img">
                         <img src="{% static 'img/female.png' %}" alt="">
                         <div class="text-content">
-                            <h4 class="h2">Shimaa ----<span class="h6"> , Egypt</span></h4>
-                            <h5 class="h3">frontend Developer<span class="h6"> , 33 years old</span></h5>
-                            <p class= 'h4'>-----------------</p>
-                            <h6 class="h4 mt-5">A few words from Shimaa <span class="h6"></span></h6>
-                            <p class= 'h4 mt-5'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere accusantium atque deleniti.</p>
+                            <h5 class="h4 mt-1">Shimaa Shaban <span class="h6">, Egypt</span></h5>
+                            <h5 class="h6 mt-3">FrontEnd developer<span class="h6"> , 27 years old</span></h5>
+                            <p class= 'h4 mt-5'>Bachelor of Management Information Systems</p>
+                            <p class= 'h4 mt-5'>some wordssome wordssome words.</p>
                         </div>
                     </div>
                 </div>
-               
-               
             </div>
         </div>
     </section>
-
 {% endblock %} 
