@@ -2,8 +2,7 @@
 {% block title %} {{page_title}} {% endblock %}
 {% load static %} 
 {% block content%}
-{{contact_form}}
-  {% comment %} <section class="contactus mx-auto py-5">
+ <section class="contactus mx-auto py-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col">
@@ -17,7 +16,7 @@
                                             <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
                                         </div>
                                         <div class="media-body">
-                                          <p class="mt-0 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, delectus</p>
+                                          <p class="mt-0 text-white">Germany , Berlin</p>
                                         </div>
                                     </div>
                                     <div class="media mb-5 align-items-center">
@@ -25,7 +24,7 @@
                                             <i class="fa fa-mobile fa-2x" aria-hidden="true"></i>
                                         </div>
                                         <div class="media-body">
-                                          <p class="mt-0 text-white">+ 200 01000 000 0000</p>
+                                          <p class="mt-0 text-white">+49 176 4529 9700</p>
                                         </div>
                                     </div>
                                     <div class="media mb-5 align-items-center">
@@ -33,14 +32,14 @@
                                             <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
                                         </div>
                                         <div class="media-body">
-                                          <p class="mt-0 text-white">+ 200 1234567890</p>
+                                          <p class="mt-0 text-white">+49 6061 630 7140</p>
                                         </div>
                                     </div>
                                     <div class="media mb-5 align-items-center">
                                         <div class= 'iconBox mr-3'>
                                             <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>                                        </div>
                                         <div class="media-body">
-                                          <p class="mt-0 text-white">gmail123@gmail.com</p>
+                                          <p class="mt-0 text-white">nsnn40599@gmail.com</p>
                                         </div>
                                     </div>
                                     <div class="socialBox ">
@@ -53,18 +52,20 @@
                                 </div>
                             </div>
                             <div class="col-md-8 mt-5">
-                                <form action="" class="my-auto">
-                                    
+                                <form method = "POST" class="my-auto">
+                                    {% csrf_token %}
                                     <div class="form-group ">
-                                        <label for="name">Subject :</label>
-                                        <input type="text" class="form-control" id="name" placeholder="your name">
+                                        <label for="name"> {{contact_form.Subject.label}} :</label>
+                                        {{contact_form.Subject}}
+                                         {{contact_form.Subject.errors}}
                                     </div>
                                     <div class="form-group mt-5">
-                                        <label for="description">Message :</label>
-                                        <textarea class="form-control" id="description" placeholder= 'Write your message here'></textarea>
+                                        <label for="description"> {{contact_form.Message.label}} :</label>
+                                         {{contact_form.Message}}
+                                         {{contact_form.Message.errors}}
                                     </div>
                                         <div class="form-group clearfix">
-                                        <a class='btn myBtn my-3 text-uppercase float-right' href='#'>send</a>
+                                        <input type = "submit" value = "Send"  class='btn myBtn my-3 text-uppercase float-right' id = "">
                                         </div>
                                 </form>
                             </div>
@@ -73,7 +74,7 @@
                 </div>
             </div>
         </div>
-    </section> {% endcomment %}
+    </section>
 
 
 {% endblock %} 

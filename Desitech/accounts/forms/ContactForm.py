@@ -14,7 +14,7 @@ class contactUs (forms.ModelForm):
 
         widgets = {
             'Subject': forms.TextInput(attrs={'class': 'form-control', 'placeholder': "Subject"}),
-            'Message': forms.Textarea(attrs={'class': 'form-control', 'placeholder': "Message"}), 
+            'Message': forms.Textarea(attrs={'class': 'form-control', 'placeholder': "Write your Message here" , 'style':'resize: none;'}), 
             }
 
 

@@ -31,11 +31,11 @@ class CompanyInformationView(CreateAPIView):
 
                     )
                 status_code = status.HTTP_200_OK
-                response = {'success' : 'True','status code' : status_code}
+                response = {'success' : 'True',}
             except Exception as err:
                
                 status_code = status.HTTP_406_NOT_ACCEPTABLE
-                response = {'error' : str(err) ,'status code' : status_code}
+                response = {'error' : str(err) ,}
         
 
             return Response(response, status=status_code)

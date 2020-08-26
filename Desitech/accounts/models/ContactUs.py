@@ -10,6 +10,10 @@ class ContactUs (models.Model):
     Message = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        verbose_name_plural = "Users Messages"
+
     def get_days_ago (self):
         return  datetime.now().day - self.date.day  
+
        

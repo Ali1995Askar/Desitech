@@ -10,7 +10,11 @@ from jobs.forms.JobCreateForm import JobForm
 
 
 class CustomJobAdmin(admin.ModelAdmin):
-   
+    
+    def save_model(self, request, job, form, change):
+        job.publish_By = request.user
+        job.save()
+       
     def Name (self , job ):
         profile = job.publish_By.getProfile()
         if profile is None:

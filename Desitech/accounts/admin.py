@@ -7,9 +7,24 @@ from accounts.models.JobSeekerProfile import job_seeker_profile
 from accounts.models.Country import Country
 from accounts.models.City import City
 from accounts.models.ContactUs import ContactUs
+from accounts.forms.ContactForm import contactUs
 from django.contrib.auth.models import Group
 
+class CustomContactAdmin(admin.ModelAdmin):
+    
+    def save_model(self, request, contactData, form, change):
+        contactData.Sent_by = request.user
+        contactData.save()
 
+    form = contactUs
+    ordering = ('date',)
+    list_display = ('Sent_by' , 'Subject' , 'date' )
+    list_display_links = ('Sent_by' , 'Subject' , 'date' )
+    list_filter =  ('Sent_by' , 'date' , )
+    search_fields = ('Sent_by' , 'Subject' ,)
+
+
+ 
 
 class Company(admin.StackedInline):
     model = Company_profile
@@ -52,6 +67,7 @@ class CustomUserAdmin(UserAdmin):
 
 
 
+
     def get_inline_instances(self, request, obj=None):
        
         if not obj:
@@ -70,7 +86,8 @@ admin.site.unregister(Group)
 admin.site.register(User, CustomUserAdmin)
 admin.site.register (City )
 admin.site.register (Country )
-admin.site.register (ContactUs)
+
+admin.site.register (ContactUs , CustomContactAdmin )
 
 admin.site.site_header = 'Desitech'
 admin.site.site_title = 'Desitech'
