@@ -6,6 +6,8 @@ from jobs.api.views.JobListView import AllJobsList
 from jobs.api.views.JobByIdView import JobById
 from jobs.api.views.JobsByCompany import JobsByCompany
 from jobs.api.views.JobsByCity import JobsByCity
+from jobs.api.views.AddJob import AddJob
+
 app_name = 'jobs'
 
 urlpatterns = [
@@ -25,8 +27,9 @@ urlpatterns = [
     path('ajax/load-cities/', views.load_cities, name='ajax_load_cities') , 
 
     #api urls
-    path('api/Job/allJobs/', AllJobsList.as_view(), name='api-job-alljobs') ,
+    path('api/job/allJobs/', AllJobsList.as_view(), name='api-job-alljobs') ,
     path('api/job/<int:pk>/', JobById.as_view(), name='api-job-by-id'),
     path('api/job/company/<int:company_id>/', JobsByCompany.as_view(), name='api-jobs-by-company'),
     path('api/job/city/<int:city_id>/', JobsByCity.as_view(), name='api-jobs-by-city'),
+    path('api/job/add/', AddJob.as_view(), name='api-jobs-add'),
 ]
