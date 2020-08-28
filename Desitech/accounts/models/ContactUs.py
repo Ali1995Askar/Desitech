@@ -3,7 +3,7 @@ from accounts.models.User import User
 from datetime import datetime
 
 
-class ContactUs (models.Model):
+class ContactUs  (models.Model):
 
     Sent_by =models.ForeignKey(User , on_delete=models.CASCADE)
     Subject = models.CharField(max_length=50) 
@@ -13,7 +13,6 @@ class ContactUs (models.Model):
     class Meta:
         verbose_name_plural = "Users Messages"
 
-    def get_days_ago (self):
-        return  datetime.now().day - self.date.day  
+      
 
        

@@ -11,21 +11,23 @@ from accounts.api.serializers.ProfileSerializer import JobSeekerProfileSerialize
 from accounts.models.Country import Country
 from accounts.models.City import City
 import json
+
 class JobSeekerInformationView(CreateAPIView):
     permission_classes = (IsAuthenticated,)
     authentication_class = JSONWebTokenAuthentication
     parser_classes = (MultiPartParser,)
     def post(self, request):
       
-
-        if request.user.is_company :
+       
+        if request.user.is_job_seeker :
             try:
-              
+            
                 jsonsString = request.data['data']
+               
                 jsonString = jsonsString.replace ("\'" , "\"")
-                data = json.loads(jsonString);
-               
-               
+                data = json.loads(jsonString)
+                
+                # request.data
                 job_seeker_profile.objects.create(
                     user=request.user , 
                     Name = data['Name'] ,
