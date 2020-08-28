@@ -22,29 +22,29 @@ class JobSeekerInformationView(CreateAPIView):
         if request.user.is_job_seeker :
             try:
             
-                jsonsString = request.data['data']
+                # jsonsString = request.data['data']
                
-                jsonString = jsonsString.replace ("\'" , "\"")
-                data = json.loads(jsonString)
+                # jsonString = jsonsString.replace ("\'" , "\"")
+                # data = json.loads(jsonString)
                 
-                # request.data
+                data = request.data
                 job_seeker_profile.objects.create(
                     user=request.user , 
-                    Name = data['Name'] ,
-                    surname = data['surname'] ,
-                    country = Country.objects.get (id = int(data['country'])) ,
-                    city =  City.objects.get (id = int(data['city'])) ,
-                    nationality =  data['nationality'] ,
-                    birth_date =  data['birth_date'] ,
-                    gender =data['gender'] ,
-                    zip_code =  data['zip_code'] ,
-                    street =  data['street'] ,
-                    house_number =  data['house_number'] ,
+                    Name = request.data['Name'] ,
+                    surname = request.data['surname'] ,
+                    country = Country.objects.get (id = int(request.data['country'])) ,
+                    city =  City.objects.get (id = int(request.data['city'])) ,
+                    nationality =  request.data['nationality'] ,
+                    birth_date =  request.data['birth_date'] ,
+                    gender = request.data['gender'] ,
+                    zip_code =  request.data['zip_code'] ,
+                    street =  request.data['street'] ,
+                    house_number =  request.data['house_number'] ,
                     personal_photo =  request.FILES['personal_photo'] ,
                     CV =  request.FILES['CV'] ,
-                    cover_letter =  data['cover_letter'] ,
-                    phone_number =  data['phone_number'] ,
-                    mobile_number =  data['mobile_number'] ,    
+                    cover_letter =  request.data['cover_letter'] ,
+                    phone_number =  request.data['phone_number'] ,
+                    mobile_number =  request.data['mobile_number'] ,    
                     )
 
                 status_code = status.HTTP_200_OK
@@ -56,6 +56,7 @@ class JobSeekerInformationView(CreateAPIView):
         
 
             return Response(response, status=status_code)
-
+        else:
+            response = {'error' : 'this url is only for job seeker user , check auth or type of user.' }
 
    
