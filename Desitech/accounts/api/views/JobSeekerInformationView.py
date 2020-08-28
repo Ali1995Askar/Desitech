@@ -24,7 +24,7 @@ class JobSeekerInformationView(CreateAPIView):
             
                 jsonsString = request.data['data']
                 # jsonString = jsonsString.replace ("\'" , "\"")
-                data = json.loads(jsonString)
+                data = json.loads(jsonsString)
                 
                 data = request.data
                 job_seeker_profile.objects.create(
