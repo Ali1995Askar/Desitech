@@ -16,15 +16,14 @@ class JobSeekerInformationView(CreateAPIView):
     permission_classes = (IsAuthenticated,)
     authentication_class = JSONWebTokenAuthentication
     parser_classes = (MultiPartParser,)
+
     def post(self, request):
-      
-       
+
         if request.user.is_job_seeker :
             try:
             
                 jsonsString = request.data['data']
-               
-                jsonString = jsonsString.replace ("\'" , "\"")
+                # jsonString = jsonsString.replace ("\'" , "\"")
                 data = json.loads(jsonString)
                 
                 data = request.data
