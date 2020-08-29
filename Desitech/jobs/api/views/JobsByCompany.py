@@ -16,9 +16,10 @@ class JobsByCompany(APIView):
     authentication_class = JSONWebTokenAuthentication
     
 
-    def get(self, request , company_id , format=None):
+    def get(self, request , format=None):
         try: 
-            jobs = Job.job_manger.filter(publish_By = company_id)
+            id = request.user.id
+            jobs = Job.job_manger.filter(publish_By = id)
             jobsByCompany = JobSerializer(jobs, many=True)
             status_code = status.HTTP_200_OK
             response = {'jobs' : jobsByCompany.data , }

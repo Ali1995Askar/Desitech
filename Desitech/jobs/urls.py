@@ -29,7 +29,7 @@ urlpatterns = [
     #api urls
     path('api/job/allJobs/', AllJobsList.as_view(), name='api-job-alljobs') ,
     path('api/job/<int:pk>/', JobById.as_view(), name='api-job-by-id'),
-    path('api/job/company/<int:company_id>/', JobsByCompany.as_view(), name='api-jobs-by-company'),
+    path('api/job/company/', JobsByCompany.as_view(), name='api-jobs-by-company'),
     path('api/job/city/<int:city_id>/', JobsByCity.as_view(), name='api-jobs-by-city'),
     path('api/job/add/', AddJob.as_view(), name='api-jobs-add'),
 ]

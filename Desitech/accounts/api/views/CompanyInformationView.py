@@ -17,6 +17,7 @@ class CompanyInformationView(CreateAPIView):
     def post(self, request):
     
         if request.user.is_company :
+           
             try:
                 Company_profile.objects.create(
                     user=request.user ,   

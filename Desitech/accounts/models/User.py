@@ -35,11 +35,15 @@ class User (AbstractBaseUser , PermissionsMixin):
         return False
 
     def getProfile (self):
-        if self.user_type == 1:
-            profile = mo.CompanyProfile.Company_profile.objects.get (user = self)
-            return profile
-        elif self.user_type == 2 :
-            profile = mo.JobSeekerProfile.job_seeker_profile.objects.get (user = self)
-            return  profile
+        try:
+            if self.user_type == 1:
+                profile = mo.CompanyProfile.Company_profile.objects.get (user = self)
+                return profile
+            elif self.user_type == 2 :
+                profile = mo.JobSeekerProfile.job_seeker_profile.objects.get (user = self)
+                return  profile
+        except Exception :
+            return None
+       
     
     objects = UserManager ()

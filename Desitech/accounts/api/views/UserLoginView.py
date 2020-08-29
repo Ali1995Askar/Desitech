@@ -25,6 +25,7 @@ class UserLoginView(RetrieveAPIView):
                 'user_id' : serializer.data['user_id'] ,
                 'user_type' :  serializer.data['user_type'] ,
                 'token' : serializer.data['token'],
+                'completed' :  serializer.data['completed'] ,
                 }
           
             status_code = status.HTTP_200_OK
