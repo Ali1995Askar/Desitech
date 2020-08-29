@@ -18,15 +18,17 @@ class JobSeekerInformationView(CreateAPIView):
     parser_classes = (MultiPartParser,)
 
     def post(self, request):
-
+       
+        
         if request.user.is_job_seeker :
             try:
             
                 jsonsString = request.data['data']
-                # jsonString = jsonsString.replace ("\'" , "\"")
-                data = json.loads(jsonsString)
-                
-                # data = request.data
+
+                jsonString = jsonsString.replace ("\'" , "\"")
+               
+                data = json.loads(jsonString)
+               
                 job_seeker_profile.objects.create(
                     user=request.user , 
                     Name = data['Name'] ,

@@ -40,3 +40,10 @@ class job_seeker_profile (models.Model):
     @property
     def age(self):
         return int((datetime.now().date() - self.birth_date).days / 365.25)
+    
+    @property
+    def sex(self):
+        if self.gender == 'M':
+            return 'Male'
+        if self.gender == 'F':
+             return 'FeMale'

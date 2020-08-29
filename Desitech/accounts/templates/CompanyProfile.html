@@ -4,9 +4,44 @@
 {% block title %} {{page_title}} {% endblock %}
 {% block content%}
 
-<h1>hello company<h2>
-
- {{profile.Name}}
-
+ <section class="proflie mx-auto py-5">
+        <div class="container">
+            <div class="row ">
+                <div class="card mb-3 border-0 shadow ">
+                    <div class="row">
+                      <!-- جزء  معلومات  -->
+                      <div class="col right clearfix">
+                        <div class="card-body">
+                          <!--نهاية جزء  معلومات الشخصية -->
+                            <div class="info-data">
+                                <div class="title p-3">
+                                    <h3>information</h3>
+                                </div>
+                                <ul class="list-unstyled">
+                                    <li>company name: <span>{{profile.Name}}</span></li>
+                                    <li>address : <span> Building number: {{profile.building_number}} - street : {{profile.street}} , </span>  <span class= 'city'>{{profile.city}}</span> - <span class= 'country'>{{profile.country}}</span></li>
+                                    <li>zip code : <span>{{profile.zip_code}}</span></li>
+                                </ul>
+                            </div>
+                             <!--نهاية جزء  معلومات الشخصية -->
+                             <!-- جزء  معلومات الاتصال -->
+                            <div class="contactmy">
+                                <div class="title p-3">
+                                    <h3>contact</h3>
+                                </div>
+                                 <ul class="list-unstyled">
+                                    <li>email: <span>{{user}}</span></li>
+                                    <li><i class="fa fa-mobile" aria-hidden="true"></i> mobile number : <span>{{profile.mobile_number}}</span></li>
+                                    <li><i class="fa fa-phone" aria-hidden="true"></i>phone number  : <span>{{profile.phone_number}}</span></li>
+                                </ul>
+                            </div>
+                            <!--نهاية جزء  معلومات الاتصال -->
+                        </div>
+                        <a href="#" class="btn btn-primary mb-5 float-right myBtn mr-4">update</a>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+    </section>
    
 {% endblock %}
