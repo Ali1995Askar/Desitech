@@ -4,120 +4,78 @@
 {% block title %} {{page_title}} {% endblock %}
 {% block content%}
 
-
-<div class="container emp-profile">
-            <form method="post">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="profile-img">
-                            <img src="/media/{{profile.personal_photo}}" alt=""/>
-                          
-                            <div class="file btn btn-lg btn-primary">
-                                Change Photo
-                                <input type="file" name="file"/>
-                            </div>
+<section class="profileseeker mx-auto my-5">
+    <div class="container">
+        <div class="row mx-2 my-2 boxseeker ">
+            <div class="col-lg-4 col-md-4 col-12">
+                <div class="card">
+                    <div class="card">
+                        <img src="/media/{{profile.personal_photo}}" class="img-fluid mb-3 animate__animated animate__zoomIn animate__slower 	3s img-thumbnail rounded" width="100%" alt="">
+                       
+                    </div>
+                    <div class="titleseeker mb-3">
+                        <h3>personal information</h3>
+                    </div>
+                    <div class="card-body mb-3">
+                        <p>Name : {{profile.Name}} </p>
+                        <p>Sur Name : {{profile.surname}}</p>
+                        <p>{{profile.age}} years old</p>
+                        <p>{{profile.sex}}</p>
+                    </div>
+                    <div class="titleseeker mb-3">
+                        <h3>contact</h3>
+                    </div>
+                    <div class="card-body mb-3">
+                        <ul class="list-unstyled">
+                            <li><p>email <i class="fa fa-envelope" aria-hidden="true"></i> :<span> {{user}} </span></p></li>
+                            <li><p> phone number <i class="fa fa-phone" aria-hidden="true"></i> :<span>  {{profile.phone_number}} </span></p></li>
+                            <li><p>mobile number <i class="fa fa-mobile" aria-hidden="true"></i> :<span>  {{profile.mobile_number}}</span></p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8 col-12">
+                <div class="card">
+                    <div class="card-body mb-3">
+                        <div class="titleseeker mb-3">
+                            <h3>{{profile.Name}} {{profile.surname}}</h3>
+                        </div>
+                        {% comment %} <div class="links clearfix">
+                            <a href="#" class="float-right"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                        </div> {% endcomment %}
+                        <h6 class= 'mb-3'>about my</h6>
+                        <p>{{profile.cover_letter}}</p>
+                    </div>
+                    <div class="card">
+                        <div class="titleseeker mb-3">
+                            <h3>address</h3>
+                        </div>
+                        <div class="card-body mb-3">
+                            <p>zip code : {{profile.zip_code}}</p>
+                            <p>hous Number : {{profile.house_number}}</p>
+                            <p>street : {{profile.street}}</p>
+                            <p>{{profile.country}} - {{profile.city}} </p>
+                           
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="profile-head">
-                                    <h3>
-                                        {{profile.Name}}
-                                    </h3>
-                                    <h6>
-                                        Web Developer and Designer
-                                    </h6>
-                                   
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">cover letter</a>
-                                </li>
+                    <div class="card">
+                      <div class="titleseeker mb-3">
+                            <h3>More Info</h3>
+                        </div>
+                        <div class="card-body mb-3">
+                            <ul class="list-unstyled">
+                            
+                                <li><p>user id : <span>{{user.id}}</span></p></li>
+                                <li><p>CV :<span><a href="/media/{{profile.CV}}">download/{{profile.CV}} </a></span></p></li>
+                             
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
-                    </div>
+                    
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="profile-work">
-                          <h4> Personal information</h4>
-                                <ul class="list-unstyled">
-                                  <li><span> Full Name : {{profile.Name}} {{profile.surname}}</span></li>
-                                  <li><span> age : {{profile.age}} years</span></li>
-                                  <li><i class="fa fa-transgender" aria-hidden="true"></i><span> sex : {{profile.sex}}</span></li>
-                                </ul>
-                          <h4> Adress</h4>
-                                <ul class="list-unstyled">
-                                  <li><span>{{profile.country}} - {{profile.city}}</span></li>
-                                  <li><span> street : {{profile.street}}</span></li>
-                                  <li><span> house_number : {{profile.house_number}}</span></li>
-                                </ul>
-
-                            <h4> contact</h4>
-                                <ul class="list-unstyled">
-                                  <li><i class="fa fa-envelope" aria-hidden="true"></i> E-Mail: <span>{{user}}</span></li>
-                                  <li><i class="fa fa-mobile" aria-hidden="true"> {{profile.phone_number}}</i> </li>
-                                  <li><i class="fa fa-phone" aria-hidden="true"> {{profile.mobile_number}} </i></li>
-                                </ul>
-                          
-                        </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="tab-content profile-tab" id="myTabContent">
-                            <div class="tab-pane fade show active text-white" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                        <div class="row ">
-                                            <div class="col-md-6">
-                                                <label>User Id</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Kshiti123</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Name</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Kshiti Ghelani</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Email</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>kshitighelani@gmail.com</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Phone</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>123 456 7890</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Profession</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Web Developer and Designer</p>
-                                            </div>
-                                        </div>
-                            </div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                              <p>{{profile.cover_letter}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>           
+            </div>
         </div>
+    </div>
+</section>
 
 {% endblock %}

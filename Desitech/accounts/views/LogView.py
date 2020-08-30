@@ -20,7 +20,7 @@ class log_user(View):
               
                 #login user
                 user = signin_form.get_user()
-                print (user)
+         
                 login(request , user)
                 return redirect ('/' )
             else:

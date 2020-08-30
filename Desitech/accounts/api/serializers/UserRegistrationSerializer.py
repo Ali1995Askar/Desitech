@@ -29,7 +29,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         account_data = validated_data.pop('user')
       
         user = User.objects.create_user(
-        email = account_data['email'] , 
+        email = account_data['email'].lower(), 
         password= account_data['password'] ,  
         user_type = account_data['user_type'] , 
         )

@@ -11,6 +11,7 @@ class City(models.Model):
 
     def __str__(self):
         return self.name
+        
     @property
     def getName (self):
         return self.name

@@ -151,7 +151,7 @@ input[type=password] {
     font-weight: 600;
 }
 
-.select {
+#select {
     background-image: url(/static/img/Component.png) !important;
     background-repeat: no-repeat;
     background-position: 98% 50%;
@@ -207,95 +207,7 @@ input[type=password] {
     border-bottom: 2px solid#ccc;
 }
 
-
-/*  جزء الناف*/
-
-
-/* 
-.header .navbar {
-    padding: 0;
-}
-
-.navbar-brand img {
-    width: 100px;
-    height: 100px;
-    padding: 0;
-}
-
-.navbar-brand h1 {
-    color: #fff;
-    font-size: 2.2rem;
-    font-weight: bolder;
-}
-
-.navbar-brand h1 span {
-    color: rgb(220, 235, 85);
-}
-
-.header .navbar .navbar-toggler .icon-bar {
-    color: #fff !important;
-}
-
-.header .navbar #navbarcollapse .nav-item .nav-link {
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 600;
-    padding: 15px 10px 15px;
-    line-height: 1.2;
-}
-
-.header .navbar #navbarcollapse .active .nav-link {
-    color: rgb(220, 235, 85) !important;
-}
-
-.dropdown-toggle::after {
-    content: none;
-}
-
-.dropdown .dropdown-menu {
-    border: 2px solid rgb(220, 235, 85);
-    border-radius: 10px;
-    overflow: hidden;
-    translate: all 0.5s ease-in;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-    margin-top: 0;
-}
-
-.dropdown .dropdown-menu .dropdown-item {
-    color: #4267b2;
-}
-
-.dropdown .dropdown-menu .dropdown-item:hover {
-    background: #4267b2;
-    color: #fff;
-} */
-
 #delete-icon {
-    color: #4267b2;
-}
-
-#filter-select-jobs {
-    background-color: #4267b2;
-    color: rgb(220, 235, 85);
-    border: 0 none;
-    border-radius: 20px;
-    padding: 6px 20px;
-}
-
-#filter-btn-jobs {
-    color: #4267b2;
-}
-
-#filter-select-jobs:hover {
-    background-color: rgb(220, 235, 85);
-    color: #4267b2;
-}
-
-.table_head {
-    background-color: rgb(220, 235, 85);
     color: #4267b2;
 }
 
@@ -1023,117 +935,1109 @@ body {
 
 /*===============نهاية جزء تواصل معنا==========*/
 
-.emp-profile {
-    padding: 3%;
-    margin-top: 3%;
-    margin-bottom: 3%;
-    border-radius: 0.5rem;
-    background: #fff;
+.mytable .top_page,
+.mytable .page {
+    text-align: center;
+    background: #4267b2;
+    color: #fff;
+    border-radius: 20px 10px / 10px 20px;
+    text-transform: capitalize;
 }
 
-.profile-img {
+.mytable .top_page h2 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.mytable .page h2 {
+    font-size: 1.5rem;
+    text-align: left;
+    font-weight: 500;
+}
+
+.mytable table thead {
+    background: #4267b2;
+    color: #fff;
     text-align: center;
 }
 
-.profile-img img {
-    width: 70%;
-    height: 100%;
+.mytable table tbody tr td {
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+    border: 1px solid #4267b2;
+    border-left: none;
+    border-right: none;
 }
 
-.profile-img .file {
-    position: relative;
-    overflow: hidden;
-    margin-top: -20%;
-    width: 70%;
-    border: none;
-    border-radius: 0;
-    font-size: 15px;
-    background: #212529b8;
+.mytable .table-hover tbody tr:hover td {
+    color: #fff;
+    background: #4267b2;
 }
 
-.profile-img .file input {
-    position: absolute;
+.mytable .table-hover tbody tr td a {
+    color: green;
+    text-decoration: none;
+}
+
+.mytable .table-hover tbody tr:hover td a {
+    color: #fff;
+    background: #4267b2;
+}
+
+.mytable label {
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.mytable .form-control {
+    outline: none;
+    width: 100%;
+    border: 1px solid #4267b2;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-transform: capitalize;
+    border-radius: 10px;
+}
+
+.mytable .select {
+    background-image: url(../images/Component\ 156\ –\ 8@3x.png) !important;
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.dataTables_paginate {
+    margin: 5% 0;
+}
+
+
+/* نهاية جدول قائمة الوظائف*/
+
+
+/* جدول وظائفي*/
+
+.mytablelist .top_page {
+    text-align: center;
+    background: #4267b2;
+    color: #fff;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(0% 1%, 100% 0%, 100% 68%, 76% 100%, 28% 100%, 0% 71%);
+}
+
+.mytablelist .top_page h2 {
+    line-height: 1.5;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.mytablelist .btn-add {
+    position: sticky;
+    top: 80%;
+    left: 3%;
+    transform: translate(-50%, -3%);
+    width: 50px;
+    color: #4267b2;
+    height: 50px;
+    border: 2px solid #4267b2;
+    transform: rotate(-45deg);
+    border-radius: 15px / 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.7s ease-in;
+}
+
+.mytablelist .btn-add:hover {
+    background: #4267b2;
+    border: 2px solid #000;
+}
+
+.mytablelist .btn-add a {
+    text-decoration: none;
+    color: #4267b2
+}
+
+.mytablelist .btn-add:hover a {
+    color: #fff;
+}
+
+.mytablelist .btn-add a i {
+    transform: rotate(45deg);
+}
+
+.mytablelist table thead {
+    background: #4267b2;
+    color: #fff;
+    text-align: center;
+}
+
+.mytablelist table tbody tr td {
+    font-size: 1rem;
+    font-weight: 600;
+    font-style: italic;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #4267b2;
+}
+
+.mytablelist table tbody tr:not(:first-child) {
     opacity: 0;
-    right: 0;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    border-bottom: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.mytablelist .table-hover tbody tr:hover td {
+    color: #fff;
+    background: #4267b2;
+}
+
+.mytablelist table tbody tr td a {
+    padding: 0 3%;
+}
+
+.mytablelist .table-hover tbody tr:hover td a,
+.mytablelist .table-hover tbody tr:hover td a .fa-eye,
+.mytablelist .table-hover tbody tr:hover td a .fa-pencil,
+.mytablelist .table-hover tbody tr:hover td a .fa-trash-o {
+    color: #fff;
+    background: #4267b2;
+}
+
+.mytablelist .table-hover tbody tr td .fa-eye {
+    color: green;
+    text-decoration: none;
+}
+
+.mytablelist .table-hover tbody tr td .fa-pencil {
+    color: #4267b2;
+    text-decoration: none;
+}
+
+.mytablelist .table-hover tbody tr td .fa-trash-o {
+    color: #f00;
+    text-decoration: none;
+}
+
+
+/*job seeker profile*/
+
+.profileseeker .boxseeker {
+    box-shadow: 5px 5px 5px 5px #ccc;
+    border-radius: 20px;
+    padding: 1%;
+    border: 1px solid #ccc;
+}
+
+.profileseeker .boxseeker .card-img-overlay a {
+    font-weight: 700;
+    font-style: italic;
+    border-radius: 0px 15px 15px 0px;
+    text-decoration: none;
+    color: #fff;
+    padding: 3%;
+    display: none;
+    background: rgba(0, 0, 0, 0.397);
+    margin-left: -7%;
+    transition: all 5s ease-in-out;
+}
+
+.profileseeker .boxseeker .card-img-overlay:hover a {
+    display: inline;
+}
+
+.profileseeker .card {
+    border: none;
+    background: transparent;
+}
+
+.profileseeker .titleseeker {
+    border-radius: 20px;
+    padding: 2% 0;
+    padding-left: 1%;
+    background: linear-gradient(90deg, rgba(57, 117, 224, 1) 19%, rgba(87, 124, 223, 1) 49%, rgba(95, 113, 223, 1) 74%);
+    color: #fff;
+    width: 100%;
+    clip-path: polygon(100% 72%, 90% 67%, 87% 81%, 74% 75%, 76% 90%, 62% 81%, 66% 94%, 54% 89%, 58% 100%, 0% 100%, 0% 0%, 100% 0%);
+}
+
+.profileseeker .titleseeker h3,
+.profileseeker h6 {
+    font-weight: bold;
+    margin: 1% auto;
+    margin-left: 2%;
+    font-weight: 600;
+    font-size: 1.5vw;
+    text-transform: uppercase;
+}
+
+.profileseeker h6 {
+    color: rgba(57, 117, 224, 1);
+    position: relative;
+}
+
+.profileseeker h6::after {
+    content: '';
+    width: 15%;
+    height: 3px;
+    background: rgba(57, 117, 224, 1);
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+}
+
+.profileseeker ul li p {
+    font-weight: bolder;
+    color: rgba(57, 117, 224, 1);
+}
+
+.profileseeker p {
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.profileseeker ul li p {
+    font-weight: bolder;
+    color: rgba(57, 117, 224, 1);
+}
+
+.profileseeker ul li p span {
+    padding-left: 3%;
+    font-weight: normal;
+    color: #000;
+}
+
+@media only screen and (max-width: 750px) {
+    .profileseeker .titleseeker h3 {
+        font-size: 3vw;
+    }
+    .profileseeker h6 {
+        font-size: 2.5vw;
+    }
+    .profileseeker p {
+        font-size: .9rem;
+    }
+}
+
+
+/*company profile */
+
+.proflie {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.proflie .card {
+    width: 100%;
+}
+
+.proflie #particles-js {
+    width: 100%;
+    height: 30%;
+}
+
+.proflie .left {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, rgba(57, 117, 224, 1) 19%, rgba(87, 124, 223, 1) 49%, rgba(95, 113, 223, 1) 74%);
+}
+
+.proflie .left img {
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media only screen and (min-width: 750px) {
+    .proflie .left img {
+        width: 33%;
+    }
+}
+
+.proflie .left a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5%;
+}
+
+.proflie .title {
+    background: linear-gradient(90deg, rgba(57, 117, 224, 1) 19%, rgba(87, 124, 223, 1) 49%, rgba(95, 113, 223, 1) 74%);
+    color: #fff;
+    width: 100%;
+    display: flex;
+    clip-path: polygon(0% 0%, 0% 100%, 39% 100%, 57% 56%, 100% 56%, 100% 0%);
+}
+
+.proflie .title h3 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+
+.proflie ul {
+    margin: 2% 0;
+}
+
+.proflie ul li {
+    font-weight: bold;
+    line-height: 2;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    font-style: italic;
+}
+
+.proflie ul li span {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.proflie ul li .city,
+.proflie .right ul li .country {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.proflie p {
+    line-height: 1.4;
+    font-size: 1.1rem;
+    margin: 2% 0 4%;
+    font-weight: 600;
+}
+
+.proflie .myBtn {
+    font-size: 1rem;
+    width: 40%;
+    background: #4267b2;
+    color: #fff !important;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: all 0.5s;
+    line-height: 2;
+}
+
+.proflie .myBtn:hover {
+    background: #fff !important;
+    color: #4267b2 !important;
+    border: 2px solid #4267b2 !important;
+}
+
+
+/*نهاية جزء الزر بتاع الفورم*/
+
+
+/*jobs details*/
+
+.details .companydetail {
+    position: relative;
+    width: 100%;
+    background: #007bff;
+    color: #fff;
+    padding: 30px 0;
+}
+
+.details .companydetail::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.445);
     top: 0;
+    left: 0;
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
 }
 
-.profile-head h5 {
-    color: #333;
+.details .companydetail .company_text h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 15px 0;
+    font-style: italic;
 }
 
-.profile-head h6 {
-    color: #0062cc;
+.details .companydetail .company_text p {
+    font-size: 1.3rem;
+    margin: 15px 0;
+    font-style: italic;
+    padding-left: 3%;
 }
 
-.profile-edit-btn {
-    border: none;
-    border-radius: 1.5rem;
-    width: 70%;
-    padding: 2%;
-    font-weight: 600;
-    color: #6c757d;
+.details .companydetail .company_text p i {
+    font-size: 1rem;
+    font-weight: bold;
+    font-style: italic;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.details .jobdetail {
+    padding: 30px 0;
+}
+
+.details .jobdetail .jobs_conetent h4 {
+    color: #007bff;
+    font-size: 2rem;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.details .jobdetail .jobs_conetent .location {
+    margin-top: 5px;
+    padding-left: 4%;
+}
+
+.details .jobdetail .jobs_conetent .location p {
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+
+.details .jobdetail .jobs_conetent .location p i {
+    color: #007bff;
+    padding-right: 1%;
+}
+
+.details .jobdetail .descript .single {
+    padding: 1% 0;
+}
+
+.details .jobdetail .descript .single h4 {
+    color: #007bff;
+    font-size: 1.3rem;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.details .jobdetail .descript .single p {
+    font-style: italic;
+    margin-left: 4%;
+    text-indent: 5%;
+    text-align: justify;
+    font-weight: 500;
+    color: rgb(124, 121, 121);
+}
+
+.details .jobdetail .descript .single ul li {
+    font-style: italic;
+    margin-left: 1%;
+    text-indent: 2%;
+    text-align: justify;
+    color: rgb(124, 121, 121);
+    position: relative;
+    line-height: 2;
+}
+
+.details .jobdetail .descript .single ul li::after {
+    content: '';
+    height: 5px;
+    width: 5px;
+    background: #007bff;
+    position: absolute;
+    transform: rotate(-45deg);
+    top: 50%;
+    left: 0%;
+}
+
+.details .jobdetail .button {
+    margin: 20px 0;
+    position: relative;
+    padding: 0.8em 2.2em;
+    font-size: 1rem;
+    background: transparent;
     cursor: pointer;
+    user-select: none;
+    color: #007bff;
+    overflow: hidden;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
-.proile-rating {
-    font-size: 12px;
-    color: #818182;
-    margin-top: 5%;
+.details .jobdetail .button:hover {
+    color: #fff;
 }
 
-.proile-rating span {
-    color: #495057;
-    font-size: 15px;
-    font-weight: 600;
+.details .jobdetail .button span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    border: 5px solid #007bff;
 }
 
-.profile-head .nav-tabs {
-    margin-bottom: 5%;
+.details .jobdetail .button span::before {
+    content: '';
+    position: absolute;
+    width: 8%;
+    height: 500%;
+    background: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-60deg);
+    transition: all 1s ease;
 }
 
-.profile-head .nav-tabs .nav-link {
-    font-weight: 600;
-    border: none;
+.details .jobdetail .button:hover span::before {
+    transform: translate(-50%, -50%) rotate(90deg);
+    width: 100%;
+    background: #007bff;
 }
 
-.profile-head .nav-tabs .nav-link.active {
-    border: none;
-    border-bottom: 2px solid #0062cc;
+.details .job_sumary {
+    box-shadow: 2px 2px 2px 2px #ccc;
 }
 
-.profile-work {
-    padding: 14%;
-    margin-top: -15%;
+.details .job_sumary h3 {
+    color: #007bff;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 2% 0;
 }
 
-.profile-work p {
-    font-size: 12px;
-    color: #818182;
-    font-weight: 600;
+.details .job_sumary .job_content ul {
     margin-top: 10%;
 }
 
-.profile-work a {
+.details .job_sumary .job_content ul li {
+    font-style: italic;
+    margin-left: 1%;
+    text-align: justify;
+    font-weight: bold;
+    line-height: 2;
+}
+
+.details .job_sumary .job_content ul li span {
+    color: rgb(124, 121, 121);
+    font-weight: normal;
+}
+
+
+/*all jobs*/
+
+.mytable {
+    width: 75%;
+}
+
+
+/* جدول قائمة الوظائف*/
+
+.mytable .top_page,
+.mytable .page {
+    text-align: center;
+    background: #4267b2;
+    color: #fff;
+    border-radius: 20px 10px / 10px 20px;
+    text-transform: capitalize;
+}
+
+.mytable .top_page h2 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.mytable .page h2 {
+    font-size: 1.5rem;
+    text-align: left;
+    font-weight: 500;
+}
+
+.mytable table thead {
+    background: #4267b2;
+    color: #fff;
+    text-align: center;
+}
+
+.mytable table tbody tr td {
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 400;
+    font-style: italic;
+    border: 1px solid #4267b2;
+    border-left: none;
+    border-right: none;
+}
+
+.mytable .table-hover tbody tr:hover td {
+    color: #fff;
+    background: #4267b2;
+}
+
+.mytable .table-hover tbody tr td a {
+    color: green;
     text-decoration: none;
-    color: #e7e7e7;
+}
+
+.mytable .table-hover tbody tr:hover td a {
+    color: #fff;
+    background: #4267b2;
+}
+
+.mytable label {
+    text-transform: capitalize;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 1.2rem;
 }
 
-.profile-work ul {
-    list-style: none;
+.mytable .input-group-text {
+    background: #4267b2;
+    color: #fff;
+    border-radius: 10px 0px 0px 10px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-transform: capitalize;
 }
 
-.profile-tab label {
+.mytable .form-control {
+    outline: none;
+    width: 100%;
+    border: 1px solid #4267b2;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    border-radius: 10px;
+}
+
+.mytable .select {
+    background-image: url(../images/Component\ 156\ –\ 8@3x.png) !important;
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.dataTables_paginate {
+    margin: 5% 0;
+}
+
+#dataTable_info.dataTables_info {
+    font-size: 1.3rem;
+    color: #4267b2;
+    margin-bottom: 2%;
     font-weight: 600;
+    font-style: italic;
 }
 
-.profile-tab p {
+div.dataTables_wrapper div.dataTables_length label {
+    text-transform: none;
+    color: #4267b2;
+    margin-top: 2%;
     font-weight: 600;
-    color: #e7e7e7;
+    font-style: italic;
 }
 
-.emp-profile {
-    background: radial-gradient(circle, rgba(113, 131, 221, 1) 40%, rgba(37, 28, 82, 1) 91%);
+label select.custom-select.custom-select-sm.form-control.form-control-sm {
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+
+
+/* نهاية جدول قائمة الوظائف*/
+
+
+/* جدول وظائفي*/
+
+.mytablelist .top_page {
+    text-align: center;
+    background: #4267b2;
+    color: #fff;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(0% 1%, 100% 0%, 100% 68%, 76% 100%, 28% 100%, 0% 71%);
+}
+
+.mytablelist .top_page h2 {
+    line-height: 1.5;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.mytablelist .btn-add {
+    position: fixed;
+    top: 50%;
+    left: 3%;
+    transform: translate(-50%, -3%);
+    width: 50px;
+    color: #4267b2;
+    height: 50px;
+    border: 2px solid #4267b2;
+    transform: rotate(-45deg);
+    border-radius: 15px / 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.7s ease-in;
+}
+
+.mytablelist .btn-add:hover {
+    background: #4267b2;
+    border: 2px solid #000;
+}
+
+.mytablelist .btn-add a {
+    text-decoration: none;
+    color: #4267b2
+}
+
+.mytablelist .btn-add:hover a {
+    color: #fff;
+}
+
+.mytablelist .btn-add a i {
+    transform: rotate(45deg);
+}
+
+.mytablelist table thead {
+    background: #4267b2;
+    color: #fff;
+    text-align: center;
+}
+
+.mytablelist table tbody tr td {
+    font-size: 1rem;
+    font-weight: 600;
+    font-style: italic;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #4267b2;
+}
+
+.mytablelist table tbody tr:not(:first-child) {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    border-bottom: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.mytablelist .table-hover tbody tr:hover td {
+    color: #fff;
+    background: #4267b2;
+}
+
+.mytablelist table tbody tr td a {
+    padding: 0 3%;
+}
+
+.mytablelist .table-hover tbody tr:hover td a,
+.mytablelist .table-hover tbody tr:hover td a .fa-eye,
+.mytablelist .table-hover tbody tr:hover td a .fa-pencil,
+.mytablelist .table-hover tbody tr:hover td a .fa-trash-o {
+    color: #fff;
+    background: #4267b2;
+}
+
+.mytablelist .table-hover tbody tr td .fa-eye {
+    color: green;
+    text-decoration: none;
+}
+
+.mytablelist .table-hover tbody tr td .fa-pencil {
+    color: #4267b2;
+    text-decoration: none;
+}
+
+.mytablelist .table-hover tbody tr td .fa-trash-o {
+    color: #f00;
+    text-decoration: none;
+}
+
+
+/*jobs list*/
+
+.mytable .top_page,
+.mytable .page {
+    text-align: center;
+    background: #4267b2;
+    color: #fff;
+    border-radius: 20px 10px / 10px 20px;
+    text-transform: capitalize;
+}
+
+.mytable .top_page h2 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.mytable .page h2 {
+    font-size: 1.5rem;
+    text-align: left;
+    font-weight: 500;
+}
+
+.mytable table thead {
+    background: #4267b2;
+    color: #fff;
+    text-align: center;
+}
+
+.mytable table tbody tr td {
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 400;
+    font-style: italic;
+    border: 1px solid #4267b2;
+    border-left: none;
+    border-right: none;
+}
+
+.mytable .table-hover tbody tr:hover td {
+    color: #fff;
+    background: #4267b2;
+}
+
+.mytable .table-hover tbody tr td a {
+    color: green;
+    text-decoration: none;
+}
+
+.mytable .table-hover tbody tr:hover td a {
+    color: #fff;
+    background: #4267b2;
+}
+
+.mytable label {
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 1.3vw;
+}
+
+.mytable .input-group-text {
+    background: #4267b2;
+    color: #fff;
+    border-radius: 10px 0px 0px 10px;
+    line-height: 1.5;
+    text-transform: capitalize;
+}
+
+.mytable .form-control {
+    outline: none;
+    width: 100%;
+    border: 1px solid #4267b2;
+    font-size: 1.3vw;
+    line-height: 1.5;
+    border-radius: 10px;
+}
+
+.mytable .select {
+    background-image: url(../images/Component\ 156\ –\ 8@3x.png) !important;
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.dataTables_paginate {
+    margin: 5% 0;
+}
+
+#dataTable_info.dataTables_info {
+    font-size: 1.3rem;
+    color: #4267b2;
+    margin-bottom: 2%;
+    font-weight: 600;
+    font-style: italic;
+}
+
+div.dataTables_wrapper div.dataTables_length label {
+    text-transform: none;
+    color: #4267b2;
+    margin-top: 2%;
+    font-weight: 600;
+    font-style: italic;
+}
+
+label select.custom-select.custom-select-sm.form-control.form-control-sm {
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+
+#filterBtn {
+    font-size: 1vw;
+    background: #4267b2;
+    font-weight: bold;
+    border-radius: 25px;
+    padding: 0.5em 1.4em;
+}
+
+#filterBtn:hover {
+    background: #fff;
+    color: #4267b2;
+    border: 2px solid #4267b2;
+}
+
+@media only screen and (max-width: 750px) {
+    .mytable label,
+    .mytable .form-control {
+        font-size: 3vw;
+    }
+    .filterBtn {
+        font-size: 2vw;
+    }
+}
+
+
+/* نهاية جدول قائمة الوظائف*/
+
+
+/* جدول وظائفي*/
+
+.mytablelist .top_page {
+    text-align: center;
+    background: #4267b2;
+    color: #fff;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(0% 1%, 100% 0%, 100% 68%, 76% 100%, 28% 100%, 0% 71%);
+}
+
+.mytablelist .top_page h2 {
+    line-height: 1.5;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.mytablelist .btn-add {
+    position: fixed;
+    top: 50%;
+    left: 3%;
+    transform: translate(-50%, -3%);
+    width: 50px;
+    color: #4267b2;
+    height: 50px;
+    border: 2px solid #4267b2;
+    transform: rotate(-45deg);
+    border-radius: 15px / 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.7s ease-in;
+}
+
+.mytablelist .btn-add:hover {
+    background: #4267b2;
+    border: 2px solid #000;
+}
+
+.mytablelist .btn-add a {
+    text-decoration: none;
+    color: #4267b2
+}
+
+.mytablelist .btn-add:hover a {
+    color: #fff;
+}
+
+.mytablelist .btn-add a i {
+    transform: rotate(45deg);
+}
+
+.mytablelist table thead {
+    background: #4267b2;
+    color: #fff;
+    text-align: center;
+}
+
+.mytablelist table tbody tr td {
+    font-size: 1rem;
+    font-weight: 600;
+    font-style: italic;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #4267b2;
+}
+
+.mytablelist table tbody tr:not(:first-child) {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    border-bottom: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.mytablelist .table-hover tbody tr:hover td {
+    color: #fff;
+    background: #4267b2;
+}
+
+.mytablelist table tbody tr td a {
+    padding: 0 3%;
+}
+
+.mytablelist .table-hover tbody tr:hover td a,
+.mytablelist .table-hover tbody tr:hover td a .fa-eye,
+.mytablelist .table-hover tbody tr:hover td a .fa-pencil,
+.mytablelist .table-hover tbody tr:hover td a .fa-trash-o {
+    color: #fff;
+    background: #4267b2;
+}
+
+.mytablelist .table-hover tbody tr td .fa-eye {
+    color: green;
+    text-decoration: none;
+}
+
+.mytablelist .table-hover tbody tr td .fa-pencil {
+    color: #4267b2;
+    text-decoration: none;
+}
+
+.mytablelist .table-hover tbody tr td .fa-trash-o {
+    color: #f00;
+    text-decoration: none;
 }

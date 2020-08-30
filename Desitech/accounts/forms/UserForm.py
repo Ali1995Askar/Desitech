@@ -37,7 +37,9 @@ class signup_form (UserCreationForm) :
         model = User
         fields = ('email', 'password1' , 'password2' , 'user_type')
     
-
+    def clean_email (self):
+        data = self.cleaned_data['email']
+        return data.lower()
 
 
 

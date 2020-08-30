@@ -2,12 +2,77 @@
 {% load static %}
 {% block title %} job details {% endblock %}
 {% block content%}
-    <div class="container">
-        <a href="{% url 'jobs:all-jobs-list' %}" class='fa fa-arrow-circle-left fa-2x animate__animated animate__fadeInDownBig mt-4'><strong> all jobs </strong></a>
-        <div  class="jumbotron mt-4 animate__animated animate__fadeInLeft">
-            <h1 class="display-4 ">Hello, Dear!</h1>
-            <p class="lead">This job is Publish by {{job.publish_By.company_profile.Name}} company in {{job.date}}.</p>
+
+   
+<section class= 'details my-5 mx-auto'>
+    <!--تعريف الشركة وبياناتها-->
+    <div class="companydetail my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="company_text animate__animated animate__slideInLeft">
+                        <h3>{{job.publish_By.company_profile.Name}}</h3>
+                        <p>address comany Lorem ipsum dolor sit</p>
+                        <p><i class="fa fa-envelope-o"></i>{{job.publish_By}}</p>
+                        <p><i class="fa fa-phone"></i>{{job.publish_By.company_profile.phone_number}}</p>
+                        <p><i class="fa fa-mobile"></i>{{job.publish_By.company_profile.mobile_number}}</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        {% include "cards/jobDetailCard.html" %}
     </div>
+  <!-- نهاية تعريف الشركة وبياناتها-->
+  <!--تفاصيل الوظيفة-->  
+    <div class="jobdetail my-5 ">
+        <div class="container p-4 shadow-lg rounded">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="job-header my-3 p-3">
+                        <div class="single_jobs">
+                            <div class="jobs_left ">
+                                <div class="jobs_conetent">
+                                    <h4>{{job.title}}</h4>
+                                        <div class="location">
+                                            <p class="text-muted"><i class="fa fa-map-marker"></i> {{job.city}} , {{job.country}}</p>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="descript my-3 p-3">
+                        <div class="single">
+                            <h4>abstract</h4>
+                            <p>{{job.abstract}}</p>
+                        </div>
+                        <div class="single">
+                            <h4>Work description</h4>
+                            <p>{{job.skills}}</p>
+                        </div>
+                        <div class="single">
+                            <h4>Skills</h4>
+                                <p>{{job.skills}}</p>
+                        </div>
+                        <div class="col-md-12">
+                            <button class="btn button" type="submit">Apply Now<span></span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="job_sumary m-3 p-3">
+                            <h3>Job Summery</h3>
+                        <div class="job_content">
+                            <ul class="list-unstyled">
+                                <li>Published BY: <span>{{job.publish_By.company_profile.Name}}</span></li>
+                                <li>Published on: <span>{{job.date}}</span></li>
+                                <li>Location: <span>{{job.publish_By.company_profile.city}} , {{job.publish_By.company_profile.country}} </span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- نهاية تفاصيل الوظيفة--> 
+</section>
 {% endblock %}

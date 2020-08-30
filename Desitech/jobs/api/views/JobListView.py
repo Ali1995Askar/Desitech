@@ -18,7 +18,7 @@ class AllJobsList(APIView):
 
     def get(self, request, format=None):
         try:
-            jobs = Job.job_manger.all()
+            jobs = Job.job_manger.all().order_by('-date')
             allJobs = JobSerializer(jobs, many=True)
             status_code = status.HTTP_200_OK
             response = {'jobs' : allJobs.data , }

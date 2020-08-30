@@ -29,7 +29,7 @@ class UserLoginSerializer(serializers.Serializer):
 
 
     def validate(self, data):
-        email = data.get("email", None)
+        email = data.get("email", None).lower()
         password = data.get("password", None)
         user = authenticate(email=email, password=password)
        

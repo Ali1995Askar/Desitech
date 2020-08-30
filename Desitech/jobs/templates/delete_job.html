@@ -23,8 +23,8 @@
                 <div class="card-footer">
                     <form method="post">
                         {% csrf_token %}
-                        <button type="submit" class="btn btn-outline-warning mr-5"  id='filter-btn-jobs'>Yes</button>
-                        <a href="{% url 'jobs:my-jobs' %}" class="btn btn-outline-warning ml-5"  id='filter-btn-jobs'>No</a>
+                        <button type="submit" class="btn btn-primary mr-5" id="filterBtn">Yes</button>
+                        <a href="{% url 'jobs:my-jobs' %}" class="btn btn-primary ml-5 " id="filterBtn">No</a>
                     </form>
                 </div>
             </div>

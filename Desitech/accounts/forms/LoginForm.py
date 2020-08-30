@@ -7,7 +7,7 @@ from accounts.models.User import User
 
 
 class Login_Form (AuthenticationForm) :
-
+    
     username = forms.EmailField(
         label= "email" , 
         widget=forms.EmailInput(attrs= {'class': 'form-control', 'placeholder':"Enter your email "}),
@@ -20,7 +20,9 @@ class Login_Form (AuthenticationForm) :
     )
     
 
-
+    def clean_username (self):
+        data = self.cleaned_data['username']
+        return data.lower()
 
 
 

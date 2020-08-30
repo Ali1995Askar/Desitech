@@ -18,7 +18,7 @@ class JobsByCity(APIView):
 
     def get(self, request , city_id , format=None):
         try: 
-            jobs = Job.job_manger.filter(city = city_id)
+            jobs = Job.job_manger.filter(city = city_id).order_by('-date')
             jobsByCompany = JobSerializer(jobs, many=True)
             status_code = status.HTTP_200_OK
             response = {'jobs' : jobsByCompany.data , }

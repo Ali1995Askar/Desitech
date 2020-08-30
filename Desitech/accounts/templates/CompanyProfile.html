@@ -2,46 +2,51 @@
 {% load static %}
 {% load bootstrap4 %}
 {% block title %} {{page_title}} {% endblock %}
+
 {% block content%}
 
- <section class="proflie mx-auto py-5">
-        <div class="container">
-            <div class="row ">
-                <div class="card mb-3 border-0 shadow ">
-                    <div class="row">
-                      <!-- جزء  معلومات  -->
-                      <div class="col right clearfix">
-                        <div class="card-body">
-                          <!--نهاية جزء  معلومات الشخصية -->
-                            <div class="info-data">
-                                <div class="title p-3">
-                                    <h3>information</h3>
-                                </div>
-                                <ul class="list-unstyled">
-                                    <li>company name: <span>{{profile.Name}}</span></li>
-                                    <li>address : <span> Building number: {{profile.building_number}} - street : {{profile.street}} , </span>  <span class= 'city'>{{profile.city}}</span> - <span class= 'country'>{{profile.country}}</span></li>
-                                    <li>zip code : <span>{{profile.zip_code}}</span></li>
-                                </ul>
-                            </div>
-                             <!--نهاية جزء  معلومات الشخصية -->
-                             <!-- جزء  معلومات الاتصال -->
-                            <div class="contactmy">
-                                <div class="title p-3">
-                                    <h3>contact</h3>
-                                </div>
-                                 <ul class="list-unstyled">
-                                    <li>email: <span>{{user}}</span></li>
-                                    <li><i class="fa fa-mobile" aria-hidden="true"></i> mobile number : <span>{{profile.mobile_number}}</span></li>
-                                    <li><i class="fa fa-phone" aria-hidden="true"></i>phone number  : <span>{{profile.phone_number}}</span></li>
-                                </ul>
-                            </div>
-                            <!--نهاية جزء  معلومات الاتصال -->
+<section class="profileseeker mx-auto my-5">
+    <div class="container">
+            <div class="col-lg-8 col-md-8 col-12">
+                <div class="card">
+                    <div class="card-body mb-3">
+                        <div class="titleseeker mb-3">
+                            <h3>{{profile.Name}} Company</h3>
                         </div>
-                        <a href="#" class="btn btn-primary mb-5 float-right myBtn mr-4">update</a>
-                      </div>
                     </div>
-                  </div>
+                </div>
             </div>
-    </section>
-   
+        <div class="row mx-2 my-2 boxseeker ">
+            <div class="col-lg-5 col-md-4 col-12">
+                <div class="card ">
+                    <div class="titleseeker mb-3">
+                        <h3>contact</h3>
+                    </div>
+                    <div class="card-body mb-3">
+                        <ul class="list-unstyled">
+                            <li><p>email <i class="fa fa-envelope" aria-hidden="true"></i> :<span> {{user}} </span></p></li>
+                            <li><p> phone number <i class="fa fa-phone" aria-hidden="true"></i> :<span>  {{profile.phone_number}} </span></p></li>
+                            <li><p>mobile number <i class="fa fa-mobile" aria-hidden="true"></i> :<span>  {{profile.mobile_number}}</span></p></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+             <div class="col-lg-5 col-md-4 col-12 ml-5 ">
+             <div class="titleseeker mb-3 ">
+                        <h3>address</h3>
+                    </div>
+                    <div class="card-body mb-3">
+                        <ul class="list-unstyled">
+                         <li> <p>{{profile.country}} - {{profile.city}} </p></li>
+                            <li><p>street : {{profile.street}}</p></li>
+                            <li> <p>hous Number : {{profile.house_number}}</p></li>
+                            <li> <p>zip code : {{profile.zip_code}}</p></li>
+                        </ul>
+                    </div>
+             </div>
+        </div>
+    </div>
+</section>
+
 {% endblock %}

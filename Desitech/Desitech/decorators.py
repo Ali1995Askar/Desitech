@@ -84,6 +84,7 @@ def have_profile(function):
                     return function(request, *args, **kwargs)
                else:
                     raise PermissionDenied
+               
           if request.user.user_type == 2 :
                profile  = job_seeker_profile.objects.filter (user = request.user.id)
                if  profile:
