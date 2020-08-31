@@ -77,6 +77,7 @@ def doesnt_have_profile(function):
 def have_profile(function):
      @wraps(function)
      def wrap(request, *args, **kwargs):
+     
           if request.user.user_type == 1 :
                profile  = Company_profile.objects.filter (user = request.user.id)
                

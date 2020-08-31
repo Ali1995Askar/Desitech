@@ -29,6 +29,7 @@ def about (request):
 
 login_decorator = login_required (login_url = 'accounts:login')
 @method_decorator(login_decorator, name='dispatch')
+@method_decorator(login_decorator, name='dispatch')
 class Contact (View) :
 
     def get (self , request):

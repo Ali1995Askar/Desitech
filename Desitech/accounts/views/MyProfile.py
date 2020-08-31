@@ -26,6 +26,7 @@ class MyProfile (View):
 
     def post (self , request):
         pass
+    # i'll complete it soon
 
  
 
